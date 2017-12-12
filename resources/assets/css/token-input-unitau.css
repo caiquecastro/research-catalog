@@ -1,0 +1,112 @@
+/* Example tokeninput style #2: Facebook style */
+ul.token-input-list-unitau {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    cursor: text;
+    z-index: 999;
+    margin: 0;
+    list-style-type: none;
+}
+
+ul.token-input-list-unitau li input {
+    border: 0;
+    width: 100%;
+    background-color: white;
+    -webkit-appearance: caret;
+    padding: 5px;
+}
+
+li.token-input-token-unitau {
+    overflow: hidden; 
+    height: auto !important; 
+    padding: 3px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    background-color: #ccc;
+    color: #000;
+    cursor: default;
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    float: left;
+    white-space: nowrap;
+}
+
+li.token-input-token-unitau p {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+li.token-input-token-unitau span {
+    color: #000;
+    margin-left: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+li.token-input-selected-token-unitau {
+    background-color: #ccc;
+    border: 1px solid #3b5998;
+    color: #fff;
+}
+
+li.token-input-input-token-unitau {
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+div.token-input-dropdown-unitau {
+    position: absolute;
+    width: 400px;
+    background-color: #fff;
+    overflow: hidden;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    cursor: default;
+    z-index: 1;
+}
+
+div.token-input-dropdown-unitau p {
+    margin: 0;
+    padding: 5px;
+    font-weight: bold;
+    color: #777;
+}
+
+div.token-input-dropdown-unitau ul {
+    margin: 0;
+    padding: 0;
+}
+
+div.token-input-dropdown-unitau ul li {
+    background-color: #fff;
+    padding: 3px;
+    margin: 0;
+    list-style-type: none;
+}
+
+div.token-input-dropdown-unitau ul li.token-input-dropdown-item-unitau {
+    background-color: #fff;
+}
+
+div.token-input-dropdown-unitau ul li.token-input-dropdown-item2-unitau {
+    background-color: #fff;
+}
+
+div.token-input-dropdown-unitau ul li em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+div.token-input-dropdown-unitau ul li.token-input-selected-dropdown-item-unitau {
+    background-color: #23a127;
+    color: #fff;
+}

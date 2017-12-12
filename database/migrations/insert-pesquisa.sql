@@ -1,0 +1,1 @@
+INSERT INTO pesquisa (descricao) VALUES ('Pesquisa I'), ('Pesquisa II'), ('Pesquisa III');

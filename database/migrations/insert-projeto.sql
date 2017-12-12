@@ -1,0 +1,1 @@
+INSERT INTO projeto (descricao) VALUES ('Projeto I'), ('Projeto II'), ('Projeto III');

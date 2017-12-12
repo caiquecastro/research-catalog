@@ -1,0 +1,55 @@
+version: '3'
+
+volumes:
+  # MySQL Data
+  mysql-data:
+    driver: local
+  # Redis Data
+  redis-data:
+    driver: local
+
+services:
+  mysql:
+    image: ambientum/mysql:5.7
+    container_name: catalog-mysql
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=catalog_root_pass
+      - MYSQL_DATABASE=catalog
+      - MYSQL_USER=catalog_user
+      - MYSQL_PASSWORD=catalog_pass
+
+  cache:
+    image: ambientum/redis:4.0
+    container_name: catalog-cache
+    command: --appendonly yes
+    volumes:
+      - redis-data:/data
+    ports:
+      - "6379:6379"
+
+  # PHP (with Nginx)
+  app:
+    image: ambientum/php:7.1-nginx
+    container_name: catalog-app
+    volumes:
+      - .:/var/www/app
+    ports:
+      - "80:8080"
+    links:
+      - mysql
+      - cache
+
+  # Laravel Queues
+  queue:
+    image: ambientum/php:7.1
+    container_name: catalog-queue
+    command: php artisan queue:listen
+    volumes:
+      - .:/var/www/app
+    links:
+      - mysql
+      - cache

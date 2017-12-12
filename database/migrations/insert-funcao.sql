@@ -1,0 +1,1 @@
+INSERT INTO funcao(descricao, isprofessor) VALUES ('Professor', true), ('Secretária', false);
