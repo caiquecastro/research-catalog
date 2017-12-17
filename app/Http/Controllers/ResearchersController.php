@@ -66,9 +66,12 @@ class ResearchersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Researcher $researcher)
     {
-        //
+        $roles = Role::all();
+        $subjects = [];
+
+        return view('researchers.edit', compact('researcher', 'roles', 'subjects'));
     }
 
     /**

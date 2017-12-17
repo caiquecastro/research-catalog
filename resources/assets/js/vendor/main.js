@@ -156,7 +156,7 @@
                 + '</select></div><div class="input-filter">'
                 + '<div class="col-md-8"><input class="form-control" name="nome">'
                 + '</div></div><div class="col-md-1"><a href="#" class="btn btn-danger btn-remove">'
-                + '<span class="glyphicon glyphicon-remove"></span></a></div></div>';
+                + '<span class="fas fa-trash"></span></a></div></div>';
         $("#filtering").append(filter);
     });
 

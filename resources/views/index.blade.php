@@ -1,3 +1,5 @@
-@include('header')
+@extends('layout')
+
+@section('content')
 <h1>Painel de Controle</h1>
-@include('footer')
+@endsection
