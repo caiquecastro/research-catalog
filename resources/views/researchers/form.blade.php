@@ -49,13 +49,14 @@
 <fieldset>
     <legend>Servidor</legend>
     <div class="form-group">
-        <label for="funcao" class="col-md-2 control-label">Função / Cargo</label>
+        <label for="role_id" class="col-md-2 control-label">Função / Cargo</label>
         <div class="col-md-3">
-            <select class="form-control" id="funcao" name="funcao" required>
+            <select class="form-control" id="role_id" name="role_id" required>
+                <option value="">Selecione</option>
                 @foreach ($roles as $role)
                     <option value="{{ $role->id }}"
                             data-professor="{{ $role->isTeacher }}"
-                            {{ $researcher->roles->contains($role) ? ' selected' : '' }}
+                            {{ $researcher->role_id == $role->id ? 'selected' : '' }}
                     >
                         {{ $role->name }}
                     </option>

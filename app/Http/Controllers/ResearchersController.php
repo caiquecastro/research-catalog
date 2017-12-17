@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Role;
 use App\Researcher;
 use Illuminate\Http\Request;
+use App\Http\Requests\ResearcherRequest;
 
 class ResearchersController extends Controller
 {
@@ -40,7 +41,7 @@ class ResearchersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ResearcherRequest $request)
     {
         Researcher::create($request->all());
 

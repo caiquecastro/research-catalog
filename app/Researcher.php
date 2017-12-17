@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Researcher extends Model
 {
-    protected $fillable = ['fullname'];
+    protected $fillable = ['fullname', 'role_id'];
 
-    public function roles()
+    public function role()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsTo(Role::class);
     }
 
     public function subjects()

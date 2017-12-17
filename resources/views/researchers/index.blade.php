@@ -117,6 +117,7 @@
     <tr>
         <td>{{ $researcher->id }}</td>
         <td>{{ $researcher->fullname }}</td>
+        <td>{{ $researcher->role->name }}</td>
     </tr>
     @endforeach
 </table>
