@@ -2,7 +2,6 @@
 
     $(".col-nascimento, .col-celular, .col-telefone, .col-situacao, .col-area, .col-endereco, .col-sexo, .col-email, .col-lattes, .col-titulacao, .col-admissao, .col-nascimento, .col-projetos, .col-pesquisas").hide();
 
-
     var attr_size = 0;
 
     var maskBehavior = function(val) {

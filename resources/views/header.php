@@ -39,22 +39,22 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cadastros <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/researchers/create">Servidor</a></li>
-                                <li><a href="form-disciplina.php">Disciplina</a></li>
-                                <li><a href="form-palavra.php">Palavra-chave</a></li>
-                                <li><a href="form-projeto.php">Projetos de Extensão</a></li>
-                                <li><a href="form-pesquisa.php">Linhas de Pesquisa</a></li>
-                                <li><a href="form-funcao.php">Funções</a></li>
+                                <li><a href="/subjects/create">Disciplina</a></li>
+                                <li><a href="/keywords/create">Palavra-chave</a></li>
+                                <li><a href="/projects/create">Projetos de Extensão</a></li>
+                                <li><a href="/researches/create">Linhas de Pesquisa</a></li>
+                                <li><a href="/roles/create">Funções</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Relatórios <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="consulta-servidor.php">Servidor</a></li>
-                                <li><a href="consulta-disciplina.php">Disciplina</a></li>
-                                <li><a href="consulta-palavra.php">Palavra-chave</a></li>
-                                <li><a href="consulta-projeto.php">Projetos de Extensão</a></li>
-                                <li><a href="consulta-pesquisa.php">Linhas de Pesquisa</a></li>
-                                <li><a href="consulta-funcao.php">Funções</a></li>
+                                <li><a href="/researchers">Servidor</a></li>
+                                <li><a href="/subjects">Disciplina</a></li>
+                                <li><a href="/keywords">Palavra-chave</a></li>
+                                <li><a href="/projects">Projetos de Extensão</a></li>
+                                <li><a href="/researches">Linhas de Pesquisa</a></li>
+                                <li><a href="/roles">Funções</a></li>
                             </ul>
                         </li>
                     </ul>
