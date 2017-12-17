@@ -1,5 +1,6 @@
-@include('header')
+@extends('layout')
 
+@section('content')
 <h1>Cadastro de Disciplina</h1>
 @include('partials.messages')
 <form role="form" id="form-funcao" class="form-horizontal" method="post" action="{{ route('subjects.store') }}">
@@ -28,7 +29,7 @@
                 <td>{{ $subject->id }}</td>
                 <td>{{ $subject->name }}</td>
                 <td>
-                    <form action="{{ route('subjects.destroy', $subject) }}" method="post" class="form-inline">
+                    <form action="{{ route('subjects.destroy', $subject) }}" method="post" class="visible-lg-inline">
                         {{ method_field('DELETE') }}
                         {{ csrf_field() }}
                         <button class="btn btn-danger btn-sm">
@@ -43,5 +44,4 @@
         @endforeach
     </tbody>
 </table>
-
-@include('footer')
+@endsection

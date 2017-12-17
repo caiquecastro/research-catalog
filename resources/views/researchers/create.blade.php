@@ -1,5 +1,6 @@
-@include('header')
+@extends('layout')
 
+@section('content')
 <h1>Cadastro de Servidor</h1>
 <div id="messages">
     <div class="alert alert-success" role="alert">Servidor cadastrado com sucesso</div>
@@ -141,5 +142,4 @@
     <button type="submit" class="btn btn-primary" name="sent">Salvar</button>
     <input type="hidden" name="id" value="{{ $researcher->id }}">
 </form>
-
-@include('footer')
+@endsection
