@@ -25,7 +25,7 @@ class SubjectsController extends Controller
     public function create()
     {
         $subject = new Subject;
-        $subjects = [];
+        $subjects = Subject::all();
 
         return view('subjects.create', compact('subject', 'subjects'));
     }
@@ -38,7 +38,9 @@ class SubjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Subject::create($request->all());
+
+        return redirect('subjects');
     }
 
     /**
