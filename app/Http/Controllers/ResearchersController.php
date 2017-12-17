@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use App\Researcher;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class ResearchersController extends Controller
      */
     public function index()
     {
-        //
+        $researchers = Researcher::all();
+
+        return view('researchers.index', compact('researchers'));
     }
 
     /**
@@ -25,7 +28,7 @@ class ResearchersController extends Controller
     public function create()
     {
         $researcher = new Researcher;
-        $roles = [];
+        $roles = Role::all();
         $subjects = [];
 
         return view('researchers.create', compact('researcher', 'roles', 'subjects'));
@@ -39,7 +42,11 @@ class ResearchersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Researcher::create($request->all());
+
+        $request->session()->flash('message', 'Servidor cadastrado com sucesso');
+
+        return redirect()->route('researchers.create');
     }
 
     /**

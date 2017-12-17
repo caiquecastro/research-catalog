@@ -63,9 +63,9 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Olá, Usuário<span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Configurações</a></li>
+                                <li><a href="#"><span class="fas fa-cog"></span> Configurações</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-off"></span> Sair</a></li>
+                                <li><a href="#"><span class="fas fa-power-off"></span> Sair</a></li>
                             </ul>
                         </li>
                     </ul>

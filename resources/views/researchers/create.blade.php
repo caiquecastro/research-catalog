@@ -2,16 +2,22 @@
 
 @section('content')
 <h1>Cadastro de Servidor</h1>
-<div id="messages">
-    <div class="alert alert-success" role="alert">Servidor cadastrado com sucesso</div>
-</div>
+@include('partials.messages')
 <form role="form" class="form-horizontal" method="post" action="{{ route('researchers.store') }}" id="form-servidor">
+    {{ csrf_field() }}
     <fieldset>
         <legend>Geral</legend>
         <div class="form-group">
-            <label for="nome" class="col-md-2 control-label">Nome Completo</label>
+            <label for="fullname" class="col-md-2 control-label">Nome Completo</label>
             <div class="col-md-6">
-                <input type="text" class="form-control" id="nome" name="nome" maxlength="60" value="{{ $researcher->name }}" required>
+                <input type="text"
+                       class="form-control"
+                       id="fullname"
+                       name="fullname"
+                       maxlength="60"
+                       value="{{ $researcher->fullname }}"
+                       required
+                >
             </div>
             <label for="nascimento" class="col-md-1 control-label">Nascimento</label>
             <div class="col-md-3">

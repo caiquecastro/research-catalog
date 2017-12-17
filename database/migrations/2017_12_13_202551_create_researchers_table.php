@@ -15,6 +15,7 @@ class CreateResearchersTable extends Migration
     {
         Schema::create('researchers', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('fullname');
             $table->timestamps();
         });
     }

@@ -1,15 +1,8 @@
-<?php
-require_once './class/ServidorDAO.class.php';
+@extends('layout')
 
-$servidor = new ServidorDAO;
-
-$servidores = $servidor->getAll();
-
-//$funcao = filter_input_array(type)
-
-require_once './header.php';
-?>
+@section('content')
 <h1>Consulta de Servidor</h1>
+
 <form role="form" class="form-horizontal" id="search-servidor">
     <div id="filtering">
         <div class="form-group">
@@ -41,7 +34,8 @@ require_once './header.php';
     <button class="btn btn-primary" type="button" id="add-filter">Adicionar Filtro</button>
     <button class="btn btn-success" type="submit">Buscar</button>
 </form>
-<p>Encontrados <?= count($servidores); ?> resultados</p>
+
+<p>Encontrados {{ count($researchers) }} resultados</p>
 <p>Selecione os campos que deseja exibir na tabela:</p>
 <label class="checkbox-inline">
   <input type="checkbox" name="grid-field" value="option1"> Nascimento
@@ -94,11 +88,12 @@ require_once './header.php';
 <label class="checkbox-inline">
   <input type="checkbox" name="grid-field" value="palavras"> Palavras-chave
 </label>
+
 <table class="table">
     <thead>
         <tr>
-            <th class="col-id">#</th>
-            <th class="col-nome">Nome</th>
+            <th>#</th>
+            <th>Nome Completo</th>
             <th class="col-nascimento">Nascimento</th>
             <th class="col-endereco">Endereço</th>
             <th class="col-sexo">Sexo</th>
@@ -116,50 +111,15 @@ require_once './header.php';
             <th class="col-projetos">Projetos de Extensão</th>
             <th class="col-pesquisas">Linhas de Pesquisa</th>
             <th class="col-palavras">Palavras-chave</th>
-            <th>Ação</th>
         </tr>
     </thead>
-    <tbody>
-        <?php
-        foreach ($servidores as $row) :
-            ?>
-            <tr>
-                <td class="col-id"><?= $row['id']; ?></td>
-                <td class="col-nome"><?= $row['nome']; ?></td>
-                <td class="col-nascimento"><?= $row['nascimento']; ?></td>
-                <td class="col-endereco"><?= $row['endereco']; ?></td>
-                <td class="col-sexo"><?= $row['sexo']; ?></td>
-                <td class="col-email"><?= $row['email']; ?></td>
-                <td class="col-telefone"><span class="telefone"><?= $row['telefone']; ?></span></td>
-                <td class="col-celular"><span class="celular"><?= $row['celular']; ?></span></td>
-                <td class="col-funcao"><?= $row['funcao']; ?></td>
-                <td class="col-situacao"><?= $row['situacao']; ?></td>
-                <td class="col-admissao"><?= $row['admissao']; ?></td>
-                <td class="col-area"><?= $row['area']; ?></td>
-                <td class="col-concurso"><?= $row['concurso']; ?></td>
-                <td class="col-titulacao"><?= $row['titulacao']; ?></td>
-                <td class="col-lattes"><?= $row['lattes']; ?></td>
-                <td class="col-disciplinas"></td>
-                <td class="col-projetos"></td>
-                <td class="col-pesquisas"></td>
-                <td class="col-palavras"></td>
-                <td>
-                    <a class="btn btn-danger btn-sm" href="excluir-servidor.php?id=<?= $row['id']; ?>">
-                        <span class="glyphicon glyphicon-trash"></span>
-                    </a>
-                    <a class="btn btn-warning btn-sm" href="form-servidor.php?id=<?= $row['id']; ?>">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                    </a>
-                    <a class="btn btn-info btn-sm" href="relatorio.php?id=<?= $row['id']; ?>">
-                        <span class="glyphicon glyphicon-file"></span>
-                    </a>
-                </td>
-            </tr>
-            <?php
-        endforeach;
-        ?>
-    </tbody>
+    @foreach ($researchers as $researcher)
+    <tr>
+        <td>{{ $researcher->id }}</td>
+        <td>{{ $researcher->fullname }}</td>
+    </tr>
+    @endforeach
 </table>
+
 <a href="#" class="btn btn-default">Exportar para PDF</a>
-<?php
-require_once './footer.php';
+@endsection

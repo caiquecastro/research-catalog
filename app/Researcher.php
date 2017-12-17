@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Researcher extends Model
 {
+    protected $fillable = ['fullname'];
+
     public function roles()
     {
         return $this->belongsToMany(Role::class);
