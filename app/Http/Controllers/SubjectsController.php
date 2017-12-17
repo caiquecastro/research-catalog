@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Subject;
 use Illuminate\Http\Request;
+use App\Http\Requests\SubjectRequest;
 
 class SubjectsController extends Controller
 {
@@ -36,11 +37,13 @@ class SubjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SubjectRequest $request)
     {
         Subject::create($request->all());
 
-        return redirect('subjects');
+        $request->session()->flash('message', 'Disciplina cadastrada com sucesso');
+
+        return redirect()->route('subjects.create');
     }
 
     /**
@@ -83,8 +86,12 @@ class SubjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Subject $subject, Request $request)
     {
-        //
+        $subject->delete();
+
+        $request->session()->flash('message', 'Disciplina excluida com sucesso');
+
+        return redirect()->route('subjects.create');
     }
 }

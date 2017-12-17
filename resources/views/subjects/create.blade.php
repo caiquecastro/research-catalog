@@ -1,9 +1,7 @@
 @include('header')
 
 <h1>Cadastro de Disciplina</h1>
-<div id="messages">
-    <div class="alert alert-success" role="alert">Disciplina cadastrada com sucesso</div>
-</div>
+@include('partials.messages')
 <form role="form" id="form-funcao" class="form-horizontal" method="post" action="{{ route('subjects.store') }}">
     {{ csrf_field() }}
     <div class="form-group">
@@ -30,11 +28,15 @@
                 <td>{{ $subject->id }}</td>
                 <td>{{ $subject->name }}</td>
                 <td>
-                    <a class="btn btn-danger btn-sm" href="{{ route('subjects.destroy', $subject) }}">
-                        <span class="glyphicon glyphicon-trash"></span>
-                    </a>
+                    <form action="{{ route('subjects.destroy', $subject) }}" method="post" class="form-inline">
+                        {{ method_field('DELETE') }}
+                        {{ csrf_field() }}
+                        <button class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </form>
                     <a class="btn btn-warning btn-sm" href="{{ route('subjects.edit', $subject) }}">
-                        <span class="glyphicon glyphicon-pencil"></span>
+                        <i class="fas fa-edit"></i>
                     </a>
                 </td>
             </tr>

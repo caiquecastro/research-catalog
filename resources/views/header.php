@@ -10,6 +10,7 @@
         emes | default | default & theme | cerulean | cosmo | cyborg | darkly | flatly | journal | lumen
         paper | readable | sandstone | simplex | slate | spacelab | superhero | united | yeti
         -->
+        <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
         <link href="/css/cosmo.min.css" rel="stylesheet">
         <link href="/css/token-input.css" rel="stylesheet">
         <link href="/css/token-input-unitau.css" rel="stylesheet">
