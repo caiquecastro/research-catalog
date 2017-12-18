@@ -63,9 +63,11 @@ class SubjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Subject $subject)
     {
-        //
+        $subjects = Subject::all();
+
+        return view('subjects.edit', compact('subject', 'subjects'));
     }
 
     /**
@@ -75,9 +77,13 @@ class SubjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SubjectRequest $request, Subject $subject)
     {
-        //
+        $subject->update($request->all());
+
+        $request->session()->flash('message', 'Disciplina atualizada com sucesso');
+
+        return redirect()->route('subjects.create');
     }
 
     /**
