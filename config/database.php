@@ -3,7 +3,8 @@
 $databaseUrlEnv = getenv('DATABASE_URL');
 $databaseUrl = $databaseUrlEnv ? parse_url($databaseUrlEnv) : [];
 $databaseHost = $databaseUrl['host'] ?? '';
-$databaseName = $databaseUrl['path'] ? substr($databaseUrl['path'], 1) : '';
+$databasePath = $databaseUrl['path'] ?? '';
+$databaseName = $databasePath ? substr($databasePath, 1) : '';
 $databaseUser = $databaseUrl['user'] ?? '';
 $databasePassword = $databaseUrl['pass'] ?? '';
 
