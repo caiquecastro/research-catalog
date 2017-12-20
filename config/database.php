@@ -1,5 +1,12 @@
 <?php
 
+$databaseUrlEnv = getenv('DATABASE_URL');
+$databaseUrl = $databaseUrlEnv ? parse_url($databaseUrlEnv) : [];
+$databaseHost = $databaseUrl['host'] ?? '';
+$databaseName = $databaseUrl['path'] ? substr($databaseUrl['path'], 1) : '';
+$databaseUser = $databaseUrl['user'] ?? '';
+$databasePassword = $databaseUrl['pass'] ?? '';
+
 return [
 
     /*
@@ -56,11 +63,11 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => env('DB_HOST', parse_url(getenv('DATABASE_URL'))['host']),
+            'host' => env('DB_HOST', $databaseHost),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', substr(parse_url(getenv('DATABASE_URL'))['path'], 1)),
-            'username' => env('DB_USERNAME', parse_url(getenv('DATABASE_URL'))['user']),
-            'password' => env('DB_PASSWORD', parse_url(getenv('DATABASE_URL'))['pass']),
+            'database' => env('DB_DATABASE', $databaseName),
+            'username' => env('DB_USERNAME', $databaseUser),
+            'password' => env('DB_PASSWORD', $databasePassword),
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
