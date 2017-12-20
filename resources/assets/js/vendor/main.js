@@ -163,7 +163,7 @@
 
     var cbProfessor = $("#funcao").find(":selected");
     enableProfessorFields(cbProfessor);
-    $("#funcao").on('change', function() {
+    $("#role_id").on('change', function() {
         enableProfessorFields($(this).find(':selected'));
     });
 
@@ -246,10 +246,10 @@
 
     function enableProfessorFields(el) {
         var isprofessor = el.data("professor");
-        if (isprofessor === "sim") {
-            $("#fieldset-professor").slideDown();
-        } else {
+        if (isprofessor === 0) {
             $("#fieldset-professor").slideUp();
+        } else {
+            $("#fieldset-professor").slideDown();
         }
     }
     function loadSelectFuncao(el) {

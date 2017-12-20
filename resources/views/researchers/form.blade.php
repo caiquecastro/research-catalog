@@ -55,7 +55,7 @@
                 <option value="">Selecione</option>
                 @foreach ($roles as $role)
                     <option value="{{ $role->id }}"
-                            data-professor="{{ $role->isTeacher }}"
+                            data-professor="{{ $role->is_professor }}"
                             {{ $researcher->role_id == $role->id ? 'selected' : '' }}
                     >
                         {{ $role->name }}
