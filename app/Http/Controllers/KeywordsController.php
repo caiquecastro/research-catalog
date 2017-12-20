@@ -15,7 +15,7 @@ class KeywordsController extends Controller
      */
     public function index()
     {
-        //
+        return Keyword::all();
     }
 
     /**

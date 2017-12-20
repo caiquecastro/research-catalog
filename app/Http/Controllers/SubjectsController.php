@@ -15,7 +15,7 @@ class SubjectsController extends Controller
      */
     public function index()
     {
-        //
+        return Subject::all();
     }
 
     /**

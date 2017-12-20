@@ -18,10 +18,6 @@
 
     $("#fieldset-professor").hide();
 
-    $("#form-servidor").submit(function(e) {
-
-    });
-
     $("body").on('click', '.btn-remove', function() {
         $(this).parent().parent().remove();
     });
@@ -172,7 +168,7 @@
     if (valuePalavras.val() !== "" && valuePalavras.length > 0) {
         palavras = valuePalavras.val().split("|");
     }
-    $("#palavrachaves").tokenInput("./api/palavrachave.php", {
+    $("#palavrachaves").tokenInput("/keywords", {
         theme: "unitau",
         hintText: "Pesquise a palavra-chave desejada",
         searchingText: "Buscando...",
@@ -229,7 +225,7 @@
     if (valueDisciplinas.val() !== "" && valueDisciplinas.length > 0) {
         disciplinas = $("#disciplinas").val().split("|");
     }
-    $("#disciplinas").tokenInput("./api/disciplina.php", {
+    $("#disciplinas").tokenInput("/subjects", {
         theme: "unitau",
         hintText: "Pesquise a Disciplina desejada",
         searchingText: "Buscando...",
