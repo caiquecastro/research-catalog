@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Catalogo de Servidores | Unitau</title>
+        <title>Catalogo de Pesquisadores | Unitau</title>
 
         <!-- Available CSS Themes:
         emes | default | default & theme | cerulean | cosmo | cyborg | darkly | flatly | journal | lumen
@@ -30,7 +30,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">Catalogo de Servidores</a>
+                    <a class="navbar-brand" href="/">Catalogo de Pesquisadores</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbar-principal">
