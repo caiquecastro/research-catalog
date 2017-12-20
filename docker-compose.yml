@@ -2,25 +2,24 @@ version: '3'
 
 volumes:
   # MySQL Data
-  mysql-data:
+  postgres-data:
     driver: local
   # Redis Data
   redis-data:
     driver: local
 
 services:
-  mysql:
-    image: ambientum/mysql:5.7
-    container_name: catalog-mysql
+  postgres:
+    image: ambientum/postgres:9.6
+    container_name: catalog-postgres
     volumes:
-      - mysql-data:/var/lib/mysql
+      - postgres-data:/var/lib/postgresql/data
     ports:
-      - "3306:3306"
+      - "5432:5432"
     environment:
-      - MYSQL_ROOT_PASSWORD=catalog_root_pass
-      - MYSQL_DATABASE=catalog
-      - MYSQL_USER=catalog_user
-      - MYSQL_PASSWORD=catalog_pass
+      - POSTGRES_PASSWORD=catalog_pass
+      - POSTGRES_DB=catalog
+      - POSTGRES_USER=catalog_user
 
   cache:
     image: ambientum/redis:4.0
@@ -40,7 +39,7 @@ services:
     ports:
       - "80:8080"
     links:
-      - mysql
+      - postgres
       - cache
 
   # Laravel Queues
@@ -51,5 +50,5 @@ services:
     volumes:
       - .:/var/www/app
     links:
-      - mysql
+      - postgres
       - cache
