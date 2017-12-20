@@ -63,9 +63,11 @@ class KeywordsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Keyword $keyword)
     {
-        //
+        $keywords = Keyword::all();
+
+        return view('keywords.edit', compact('keyword', 'keywords'));
     }
 
     /**
@@ -75,9 +77,13 @@ class KeywordsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(KeywordRequest $request, Keyword $keyword)
     {
-        //
+        $keyword->update($request->all());
+
+        $request->session()->flash('message', 'Palavra-chave atualizada com sucesso');
+
+        return redirect()->route('keywords.create');
     }
 
     /**
@@ -86,8 +92,12 @@ class KeywordsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Keyword $keyword, Request $request)
     {
-        //
+        $keyword->delete();
+
+        $request->session()->flash('message', 'Palavra-chave excluida com sucesso');
+
+        return redirect()->route('keywords.create');
     }
 }
