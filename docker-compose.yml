@@ -1,10 +1,8 @@
 version: '3'
 
 volumes:
-  # MySQL Data
   postgres-data:
     driver: local
-  # Redis Data
   redis-data:
     driver: local
 
@@ -30,7 +28,6 @@ services:
     ports:
       - "6379:6379"
 
-  # PHP (with Nginx)
   app:
     image: ambientum/php:7.1-nginx
     container_name: catalog-app
@@ -42,10 +39,9 @@ services:
       - postgres
       - cache
 
-  # Laravel Queues
   queue:
     image: ambientum/php:7.1
-    container_name: catalog-queue
+    container_name: catalog-worker
     command: php artisan queue:listen
     volumes:
       - .:/var/www/app
