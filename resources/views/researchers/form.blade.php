@@ -140,4 +140,4 @@
         </div>
     </div>
 </fieldset>
-<button type="submit" class="btn btn-primary" name="sent">Salvar</button>
+<button type="submit" class="btn btn-primary">Salvar</button>
