@@ -1,4 +1,6 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Research Catalog
+
+![Travis CI](https://travis-ci.org/caiquecastro/research-catalog.svg?branch=master)
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
