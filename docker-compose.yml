@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 
 volumes:
   postgres-data:
@@ -9,19 +9,17 @@ volumes:
 services:
   postgres:
     image: ambientum/postgres:9.6
-    container_name: catalog-postgres
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_PASSWORD=catalog_pass
       - POSTGRES_DB=catalog
       - POSTGRES_USER=catalog_user
+      - POSTGRES_PASSWORD=catalog_pass
 
   cache:
     image: ambientum/redis:4.0
-    container_name: catalog-cache
     command: --appendonly yes
     volumes:
       - redis-data:/data
@@ -30,7 +28,6 @@ services:
 
   app:
     image: ambientum/php:7.1-nginx
-    container_name: catalog-app
     volumes:
       - .:/var/www/app
     ports:
@@ -41,7 +38,6 @@ services:
 
   queue:
     image: ambientum/php:7.1
-    container_name: catalog-worker
     command: php artisan queue:listen
     volumes:
       - .:/var/www/app
