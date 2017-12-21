@@ -16,4 +16,5 @@ Route::view('/', 'index');
 Route::resource('roles', 'RolesController');
 Route::resource('subjects', 'SubjectsController');
 Route::resource('keywords', 'KeywordsController');
+Route::resource('projects', 'ProjectsController');
 Route::resource('researchers', 'ResearchersController');

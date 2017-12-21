@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-md-2">
-            <button type="submit" name="sent" class="btn btn-primary btn-block">Salvar</button>
+            <button type="submit" class="btn btn-primary btn-block">Salvar</button>
         </div>
     </div>
 </form>
