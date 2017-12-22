@@ -9,8 +9,6 @@ class ProjectTest extends TestCase
 {
     public function testProjectCanBeCreatedByAForm()
     {
-        $this->withoutExceptionHandling();
-
         $response = $this->get('/projects/create');
 
         $response->assertStatus(200);
