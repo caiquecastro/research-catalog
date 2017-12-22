@@ -63,9 +63,11 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Role $role)
     {
-        //
+        $roles = Role::all();
+
+        return view('roles.edit', compact('role', 'roles'));
     }
 
     /**
@@ -75,9 +77,13 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Role $role)
     {
-        //
+        $role->update($request->all());
+
+        $request->session()->flash('message', 'Função atualizada com sucesso');
+
+        return redirect()->route('roles.create');
     }
 
     /**
