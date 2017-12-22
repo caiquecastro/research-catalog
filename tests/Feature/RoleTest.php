@@ -20,4 +20,14 @@ class RoleTest extends TestCase
         $response->assertRedirect('/roles/create');
         $this->assertCount(0, Role::all());
     }
+
+    public function testRolesCanBeEdited()
+    {
+        $role = factory(Role::class)->create();
+
+        $response = $this->get('roles/' . $role->id . '/edit');
+        $response->assertSee('Editar Função');
+
+        $response->assertStatus(200);
+    }
 }
