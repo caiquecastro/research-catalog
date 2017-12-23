@@ -13,9 +13,15 @@ class SubjectsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Subject::all();
+        $subjects = Subject::all();
+
+        if ($request->ajax()) {
+            return $subjects;
+        }
+
+        return view('subjects.index', compact('subjects'));
     }
 
     /**
