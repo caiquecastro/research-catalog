@@ -11,11 +11,15 @@
 |
 */
 
-Route::view('/', 'index');
+Route::middleware(['auth'])->group(function () {
+    Route::view('/', 'index');
 
-Route::resource('roles', 'RolesController');
-Route::resource('subjects', 'SubjectsController');
-Route::resource('keywords', 'KeywordsController');
-Route::resource('projects', 'ProjectsController');
-Route::resource('researches', 'ResearchesController');
-Route::resource('researchers', 'ResearchersController');
+    Route::resource('roles', 'RolesController');
+    Route::resource('subjects', 'SubjectsController');
+    Route::resource('keywords', 'KeywordsController');
+    Route::resource('projects', 'ProjectsController');
+    Route::resource('researches', 'ResearchesController');
+    Route::resource('researchers', 'ResearchersController');
+});
+
+Auth::routes();

@@ -65,7 +65,12 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="#"><span class="fas fa-cog"></span> Configurações</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#"><span class="fas fa-power-off"></span> Sair</a></li>
+                                <li>
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        {{ csrf_field() }}
+                                        <button><span class="fas fa-power-off"></span> Sair</a>
+                                    </form>
+                                </li>
                             </ul>
                         </li>
                     </ul>
