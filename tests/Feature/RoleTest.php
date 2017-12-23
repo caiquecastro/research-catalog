@@ -3,21 +3,21 @@
 namespace Tests\Feature;
 
 use App\Role;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\BrowserKitTestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class RoleTest extends TestCase
+class RoleTest extends BrowserKitTestCase
 {
-    use RefreshDatabase;
+    use DatabaseMigrations;
 
     public function testRolesCanBeDeleted()
     {
         $role = factory(Role::class)->create();
 
-        $response = $this->delete('roles/' . $role->id);
+        $this->delete('roles/' . $role->id);
 
-        $response->assertSessionHas('message', 'Função excluida com sucesso');
-        $response->assertRedirect('/roles/create');
+        $this->assertSessionHas('message', 'Função excluida com sucesso');
+        $this->assertRedirectedTo('/roles/create');
         $this->assertCount(0, Role::all());
     }
 
@@ -25,9 +25,9 @@ class RoleTest extends TestCase
     {
         $role = factory(Role::class)->create();
 
-        $response = $this->get('roles/' . $role->id . '/edit');
-        $response->assertSee('Editar Função');
+        $this->get('roles/' . $role->id . '/edit');
+        $this->see('Editar Função');
 
-        $response->assertStatus(200);
+        $this->seeStatusCode(200);
     }
 }
