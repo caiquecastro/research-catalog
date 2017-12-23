@@ -30,4 +30,12 @@ class RoleTest extends BrowserKitTestCase
 
         $this->seeStatusCode(200);
     }
+
+    public function testRolesAreListedOnIndex()
+    {
+        $this->get('roles');
+
+        $this->assertResponseOk();
+        $this->assertViewHas('roles');
+    }
 }
