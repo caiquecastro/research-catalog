@@ -6,7 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Researcher extends Model
 {
-    protected $fillable = ['fullname', 'role_id'];
+    protected $fillable = [
+        'fullname',
+        'birthday',
+        'email',
+        'address',
+        'gender',
+        'phone',
+        'mobile_phone',
+        'role_id',
+        'status',
+        'admission_date',
+    ];
 
     public function role()
     {

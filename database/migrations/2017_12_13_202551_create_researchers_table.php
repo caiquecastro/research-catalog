@@ -16,7 +16,15 @@ class CreateResearchersTable extends Migration
         Schema::create('researchers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('fullname');
+            $table->date('birthday');
+            $table->string('email');
+            $table->string('address');
+            $table->enum('gender', ['M', 'F']);
+            $table->string('phone');
+            $table->string('mobile_phone');
+            $table->enum('status', ['active']);
             $table->unsignedInteger('role_id');
+            $table->date('admission_date');
             $table->timestamps();
 
             $table->foreign('role_id')->references('id')->on('roles');
