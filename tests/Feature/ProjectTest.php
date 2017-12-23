@@ -2,15 +2,17 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\BrowserKitTestCase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ProjectTest extends TestCase
+class ProjectTest extends BrowserKitTestCase
 {
+    use DatabaseTransactions;
+
     public function testProjectCanBeCreatedByAForm()
     {
-        $response = $this->get('/projects/create');
+        $this->get('/projects/create');
 
-        $response->assertStatus(200);
+        $this->seeStatusCode(200);
     }
 }
