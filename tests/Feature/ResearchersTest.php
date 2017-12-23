@@ -3,11 +3,12 @@
 namespace Tests\Feature;
 
 use Tests\BrowserKitTestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ResearchersTest extends BrowserKitTestCase
 {
+    use DatabaseTransactions;
+
     public function testAllResearchersAttributesArePersisted()
     {
         $role = factory(\App\Role::class)->create();
@@ -45,5 +46,8 @@ class ResearchersTest extends BrowserKitTestCase
         $this->visit('researchers/' . $researcher->id . '/edit')
             ->type('Jane Doe', 'fullname')
             ->press('Salvar');
+
+        $this->seePageIs('/researchers');
+        $this->assertEquals('Jane Doe', $researcher->fresh()->fullname);
     }
 }

@@ -82,9 +82,11 @@ class ResearchersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ResearcherRequest $request, Researcher $researcher)
     {
-        //
+        $researcher->update($request->all());
+
+        return redirect('researchers');
     }
 
     /**
