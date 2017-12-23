@@ -14,7 +14,7 @@ class RoleTest extends BrowserKitTestCase
     {
         $role = factory(Role::class)->create();
 
-        $this->delete('roles/' . $role->id);
+        $this->delete('roles/'.$role->id);
 
         $this->assertSessionHas('message', 'Função excluida com sucesso');
         $this->assertRedirectedTo('/roles/create');
@@ -25,7 +25,7 @@ class RoleTest extends BrowserKitTestCase
     {
         $role = factory(Role::class)->create();
 
-        $this->get('roles/' . $role->id . '/edit');
+        $this->get('roles/'.$role->id.'/edit');
         $this->see('Editar Função');
 
         $this->seeStatusCode(200);
