@@ -6,86 +6,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Catalogo de Pesquisadores | Unitau</title>
 
-        <!-- Available CSS Themes:
-        emes | default | default & theme | cerulean | cosmo | cyborg | darkly | flatly | journal | lumen
-        paper | readable | sandstone | simplex | slate | spacelab | superhero | united | yeti
-        -->
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
-        <link href="/css/cosmo.min.css" rel="stylesheet">
-        <link href="/css/token-input.css" rel="stylesheet">
-        <link href="/css/token-input-unitau.css" rel="stylesheet">
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-        <nav class="navbar navbar-inverse" role="navigation">
-            <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-principal">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">Catalogo de Pesquisadores</a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="navbar-principal">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/">Principal</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cadastros <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/researchers/create">Servidor</a></li>
-                                <li><a href="/subjects/create">Disciplina</a></li>
-                                <li><a href="/keywords/create">Palavra-chave</a></li>
-                                <li><a href="/projects/create">Projetos de Extensão</a></li>
-                                <li><a href="/researches/create">Linhas de Pesquisa</a></li>
-                                <li><a href="/roles/create">Funções</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Relatórios <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/researchers">Servidor</a></li>
-                                <li><a href="/subjects">Disciplina</a></li>
-                                <li><a href="/keywords">Palavra-chave</a></li>
-                                <li><a href="/projects">Projetos de Extensão</a></li>
-                                <li><a href="/researches">Linhas de Pesquisa</a></li>
-                                <li><a href="/roles">Funções</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Olá, Usuário<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#"><span class="fas fa-cog"></span> Configurações</a></li>
-                                <li class="divider"></li>
-                                <li>
-                                    <form action="{{ route('logout') }}" method="POST">
-                                        {{ csrf_field() }}
-                                        <button><span class="fas fa-power-off"></span> Sair</a>
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
-        <div class="container">
-            @yield('content')
-            <hr>
-            <footer>
-                <p>© 2014 - Desenvolvido por alunos do Departamento de Informática da UNITAU</p>
-            </footer>
+        <div id="app">
+            @include('layouts/navbar')
+            <div class="container">
+                @yield('content')
+                <hr>
+                <footer>
+                    <p>© 2014 - {{ date('Y') }} - Desenvolvido por alunos do Departamento de Informática da UNITAU</p>
+                </footer>
+            </div>
         </div>
-        <script src="/js/vendor/jquery-2.1.1.min.js"></script>
-        <script src="/js/vendor/bootstrap.min.js"></script>
+        <script src="/js/app.js"></script>
         <script src="/js/vendor/jquery.mask.min.js"></script>
         <script src="/js/vendor/jquery.tokeninput.js"></script>
         <script src="/js/vendor/main.js"></script>
