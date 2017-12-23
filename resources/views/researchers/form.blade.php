@@ -13,19 +13,19 @@
                     required
             >
         </div>
-        <label for="nascimento" class="col-md-1 control-label">Nascimento</label>
+        <label for="birthday" class="col-md-1 control-label">Nascimento</label>
         <div class="col-md-3">
-            <input type="date" class="form-control" id="nascimento" name="nascimento" value="{{ $researcher->birthday }}">
+            <input type="date" class="form-control" id="birthday" name="birthday" value="{{ $researcher->birthday }}">
         </div>
     </div>
     <div class="form-group">
-        <label for="endereco" class="col-md-2 control-label">Endereço Residencial</label>
+        <label for="address" class="col-md-2 control-label">Endereço Residencial</label>
         <div class="col-md-6">
-            <input type="text" class="form-control" id="endereco" name="endereco" value="{{ $researcher->address }}">
+            <input type="text" class="form-control" id="address" name="address" value="{{ $researcher->address }}">
         </div>
-        <label for="sexo" class="col-md-1 control-label">Sexo</label>
+        <label for="gender" class="col-md-1 control-label">Sexo</label>
         <div class="col-md-3">
-            <select id="sexo" name="sexo" class="form-control">
+            <select id="gender" name="gender" class="form-control">
                 <option value="M"{{ $researcher->gender === 'M' ? ' selected' : '' }}>Masculino</option>
                 <option value="F"{{ $researcher->gender === 'F' ? ' selected' : '' }}>Feminino</option>
             </select>
@@ -36,13 +36,13 @@
         <div class="col-md-4">
             <input type="email" class="form-control" id="email" name="email" value="{{ $researcher->email }}">
         </div>
-        <label for="telefone" class="col-md-1 control-label">Telefone</label>
+        <label for="phone" class="col-md-1 control-label">Telefone</label>
         <div class="col-md-2">
-            <input type="text" id="telefone" class="telefone form-control" name="telefone" value="{{ $researcher->phone }}">
+            <input type="text" id="phone" class="telefone form-control" name="phone" value="{{ $researcher->phone }}">
         </div>
-        <label for="celular" class="col-md-1 control-label">Celular</label>
+        <label for="mobile_phone" class="col-md-1 control-label">Celular</label>
         <div class="col-md-2">
-            <input type="text" id="celular" class="celular form-control" name="celular" value="{{ $researcher->mobile_phone }}">
+            <input type="text" id="mobile_phone" class="celular form-control" name="mobile_phone" value="{{ $researcher->mobile_phone }}">
         </div>
     </div>
 </fieldset>
@@ -63,18 +63,18 @@
                 @endforeach
             </select>
         </div>
-        <label for="situacao" class="col-md-1 control-label">Situação</label>
+        <label for="status" class="col-md-1 control-label">Situação</label>
         <div class="col-md-2">
-            <select class="form-control" id="situacao" name="situacao">
-                <option value="A" {{ $researcher->status === 'A' ? ' selected': '' }}>Efetivo</option>
-                <option value="B" {{ $researcher->status === 'B' ? ' selected': '' }}>Exonerado</option>
-                <option value="C" {{ $researcher->status === 'C' ? ' selected': '' }}>Aposentado</option>
-                <option value="D" {{ $researcher->status === 'D' ? ' selected': '' }}>Afastado</option>
+            <select class="form-control" id="status" name="status">
+                <option value="active" {{ $researcher->status === 'active' ? ' selected': '' }}>Efetivo</option>
+                <option value="discharged" {{ $researcher->status === 'discharged' ? ' selected': '' }}>Exonerado</option>
+                <option value="retired" {{ $researcher->status === 'retired' ? ' selected': '' }}>Aposentado</option>
+                <option value="away" {{ $researcher->status === 'away' ? ' selected': '' }}>Afastado</option>
             </select>
         </div>
-        <label for="admissao" class="col-md-1 control-label">Admissão</label>
+        <label for="admission_date" class="col-md-1 control-label">Admissão</label>
         <div class="col-md-3">
-            <input type="date" class="form-control" id="admissao" name="admissao" value="{{ $researcher->admission }}">
+            <input type="date" class="form-control" id="admission_date" name="admission_date" value="{{ $researcher->admission_date }}">
         </div>
     </div>
 </fieldset>
