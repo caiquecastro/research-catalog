@@ -9,6 +9,7 @@
       action="{{ route('researchers.update', $researcher) }}"
       id="form-servidor"
 >
+    {{ method_field('PATCH') }}
     @include('researchers.form')
 </form>
 @endsection
