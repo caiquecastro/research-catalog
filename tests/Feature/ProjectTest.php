@@ -15,4 +15,14 @@ class ProjectTest extends BrowserKitTestCase
 
         $this->seeStatusCode(200);
     }
+
+    public function testProjectsCanBeListed()
+    {
+        factory(\App\Project::class, 10)->create();
+
+        $this->get('projects');
+
+        $this->assertResponseOk();
+        $this->assertViewHas('projects');
+    }
 }
