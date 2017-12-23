@@ -15,7 +15,9 @@ class KeywordsController extends Controller
      */
     public function index()
     {
-        return Keyword::all();
+        $keywords = Keyword::all();
+
+        return view('keywords.index', compact('keywords'));
     }
 
     /**
