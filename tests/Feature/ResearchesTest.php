@@ -12,6 +12,8 @@ class ResearchesTest extends BrowserKitTestCase
 
     public function testItCanBeListed()
     {
+        $this->actingAs(factory(\App\User::class)->create());
+
         factory(\App\Research::class, 10)->create();
 
         $this->get('researches');
@@ -20,6 +22,8 @@ class ResearchesTest extends BrowserKitTestCase
 
     public function testItCanBeCreated()
     {
+        $this->actingAs(factory(\App\User::class)->create());
+
         $this->visit('researches/create')
             ->type('Project X', 'name')
             ->press('Salvar');

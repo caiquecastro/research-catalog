@@ -12,6 +12,8 @@ class RoleTest extends BrowserKitTestCase
 
     public function testRolesCanBeDeleted()
     {
+        $this->actingAs(factory(\App\User::class)->create());
+
         $role = factory(Role::class)->create();
 
         $this->delete('roles/'.$role->id);
@@ -23,6 +25,8 @@ class RoleTest extends BrowserKitTestCase
 
     public function testRolesCanBeEdited()
     {
+        $this->actingAs(factory(\App\User::class)->create());
+
         $role = factory(Role::class)->create();
 
         $this->get('roles/'.$role->id.'/edit');
@@ -33,6 +37,8 @@ class RoleTest extends BrowserKitTestCase
 
     public function testRolesAreListedOnIndex()
     {
+        $this->actingAs(factory(\App\User::class)->create());
+
         $this->get('roles');
 
         $this->assertResponseOk();

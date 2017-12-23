@@ -11,6 +11,8 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testAllResearchersAttributesArePersisted()
     {
+        $this->actingAs(factory(\App\User::class)->create());
+
         $role = factory(\App\Role::class)->create();
 
         $this->visit('researchers/create')
@@ -41,6 +43,8 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testResearcherCanBeEdited()
     {
+        $this->actingAs(factory(\App\User::class)->create());
+
         $researcher = factory(\App\Researcher::class)->create();
 
         $this->visit('researchers/'.$researcher->id.'/edit')
