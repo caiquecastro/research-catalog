@@ -11,6 +11,8 @@ class ProjectTest extends BrowserKitTestCase
 
     public function testProjectCanBeCreatedByAForm()
     {
+        $this->actingAs(factory(\App\User::class)->create());
+
         $this->get('/projects/create');
 
         $this->seeStatusCode(200);
@@ -18,6 +20,8 @@ class ProjectTest extends BrowserKitTestCase
 
     public function testProjectsCanBeListed()
     {
+        $this->actingAs(factory(\App\User::class)->create());
+
         factory(\App\Project::class, 10)->create();
 
         $this->get('projects');
