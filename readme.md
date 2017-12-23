@@ -1,6 +1,7 @@
 # Research Catalog
 
 ![Build Status](https://travis-ci.org/caiquecastro/research-catalog.svg?branch=master)
+![StyleCI](https://styleci.io/repos/114034093/shield)
 
 ## About Laravel
 
