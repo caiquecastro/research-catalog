@@ -37,4 +37,13 @@ class ResearchersTest extends BrowserKitTestCase
         $this->assertEquals('active', $researcher->status);
         $this->assertEquals('2017-12-06', $researcher->admission_date);
     }
+
+    public function testResearcherCanBeEdited()
+    {
+        $researcher = factory(\App\Researcher::class)->create();
+
+        $this->visit('researchers/' . $researcher->id . '/edit')
+            ->type('Jane Doe', 'fullname')
+            ->press('Salvar');
+    }
 }
