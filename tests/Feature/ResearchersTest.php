@@ -43,7 +43,7 @@ class ResearchersTest extends BrowserKitTestCase
     {
         $researcher = factory(\App\Researcher::class)->create();
 
-        $this->visit('researchers/' . $researcher->id . '/edit')
+        $this->visit('researchers/'.$researcher->id.'/edit')
             ->type('Jane Doe', 'fullname')
             ->press('Salvar');
 

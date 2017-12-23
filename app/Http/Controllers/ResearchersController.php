@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Role;
 use App\Researcher;
-use Illuminate\Http\Request;
 use App\Http\Requests\ResearcherRequest;
 
 class ResearchersController extends Controller
