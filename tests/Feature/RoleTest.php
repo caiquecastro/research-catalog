@@ -4,11 +4,11 @@ namespace Tests\Feature;
 
 use App\Role;
 use Tests\BrowserKitTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class RoleTest extends BrowserKitTestCase
 {
-    use DatabaseMigrations;
+    use DatabaseTransactions;
 
     public function testRolesCanBeDeleted()
     {
