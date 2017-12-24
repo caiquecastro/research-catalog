@@ -3,9 +3,9 @@
 @section('content')
 <h1>Consulta de Projeto de Extensão</h1>
 
-<form role="form" class="form-horizontal">
-    <div class="form-group">
-        <label for="nome" class="col-md-2 control-label">Descrição</label>
+<form>
+    <div class="form-group row">
+        <label for="nome" class="col-md-2 col-form-label">Descrição</label>
         <div class="col-md-8">
             <input type="text" class="form-control" id="descricao" name="q">
         </div>
@@ -19,5 +19,5 @@
 
 @include('projects.table')
 
-<a href="#" class="btn btn-default">Exportar para PDF</a>
+<a href="#" class="btn btn-info">Exportar para PDF</a>
 @endsection

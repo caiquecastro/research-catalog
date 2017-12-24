@@ -3,15 +3,15 @@
 @section('content')
 <h1>Cadastro de Linha de Pesquisa</h1>
 
-<form role="form" id="form-funcao" class="form-horizontal" method="post" action="{{ route('researches.store') }}">
+<form method="post" action="{{ route('researches.store') }}">
     {{ csrf_field() }}
-    <div class="form-group">
-        <label for="nome" class="col-md-2 control-label">Descrição</label>
-        <div class="col-md-8">
+    <div class="form-group row">
+        <label for="nome" class="col-sm-2 col-form-label text-right">Descrição</label>
+        <div class="col-sm-8">
             <input type="text" class="form-control" id="nome" name="name" maxlength="60" value="{{ $research->name }}">
         </div>
-        <div class="col-md-2">
-            <button type="submit" name="sent" class="btn btn-primary btn-block">Salvar</button>
+        <div class="col-sm-2">
+            <button type="submit" class="btn btn-primary btn-block">Salvar</button>
         </div>
     </div>
 </form>

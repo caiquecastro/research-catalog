@@ -1,8 +1,8 @@
 {{ csrf_field() }}
 <fieldset>
     <legend>Geral</legend>
-    <div class="form-group">
-        <label for="fullname" class="col-md-2 control-label">Nome Completo</label>
+    <div class="form-group row">
+        <label for="fullname" class="col-md-2 col-form-label">Nome Completo</label>
         <div class="col-md-6">
             <input type="text"
                     class="form-control"
@@ -13,17 +13,17 @@
                     required
             >
         </div>
-        <label for="birthday" class="col-md-1 control-label">Nascimento</label>
+        <label for="birthday" class="col-md-1 col-form-label">Nascimento</label>
         <div class="col-md-3">
             <input type="date" class="form-control" id="birthday" name="birthday" value="{{ $researcher->birthday }}">
         </div>
     </div>
-    <div class="form-group">
-        <label for="address" class="col-md-2 control-label">Endereço Residencial</label>
+    <div class="form-group row">
+        <label for="address" class="col-md-2 col-form-label">Endereço Residencial</label>
         <div class="col-md-6">
             <input type="text" class="form-control" id="address" name="address" value="{{ $researcher->address }}">
         </div>
-        <label for="gender" class="col-md-1 control-label">Sexo</label>
+        <label for="gender" class="col-md-1 col-form-label">Sexo</label>
         <div class="col-md-3">
             <select id="gender" name="gender" class="form-control">
                 <option value="M"{{ $researcher->gender === 'M' ? ' selected' : '' }}>Masculino</option>
@@ -31,16 +31,16 @@
             </select>
         </div>
     </div>
-    <div class="form-group">
-        <label for="email" class="col-md-2 control-label">E-mail</label>
+    <div class="form-group row">
+        <label for="email" class="col-md-2 col-form-label">E-mail</label>
         <div class="col-md-4">
             <input type="email" class="form-control" id="email" name="email" value="{{ $researcher->email }}">
         </div>
-        <label for="phone" class="col-md-1 control-label">Telefone</label>
+        <label for="phone" class="col-md-1 col-form-label">Telefone</label>
         <div class="col-md-2">
             <input type="text" id="phone" class="telefone form-control" name="phone" value="{{ $researcher->phone }}">
         </div>
-        <label for="mobile_phone" class="col-md-1 control-label">Celular</label>
+        <label for="mobile_phone" class="col-md-1 col-form-label">Celular</label>
         <div class="col-md-2">
             <input type="text" id="mobile_phone" class="celular form-control" name="mobile_phone" value="{{ $researcher->mobile_phone }}">
         </div>
@@ -48,8 +48,8 @@
 </fieldset>
 <fieldset>
     <legend>Servidor</legend>
-    <div class="form-group">
-        <label for="role_id" class="col-md-2 control-label">Função / Cargo</label>
+    <div class="form-group row">
+        <label for="role_id" class="col-md-2 col-form-label">Função / Cargo</label>
         <div class="col-md-3">
             <select class="form-control" id="role_id" name="role_id" required>
                 <option value="">Selecione</option>
@@ -63,7 +63,7 @@
                 @endforeach
             </select>
         </div>
-        <label for="status" class="col-md-1 control-label">Situação</label>
+        <label for="status" class="col-md-1 col-form-label">Situação</label>
         <div class="col-md-2">
             <select class="form-control" id="status" name="status">
                 <option value="active" {{ $researcher->status === 'active' ? ' selected': '' }}>Efetivo</option>
@@ -72,7 +72,7 @@
                 <option value="away" {{ $researcher->status === 'away' ? ' selected': '' }}>Afastado</option>
             </select>
         </div>
-        <label for="admission_date" class="col-md-1 control-label">Admissão</label>
+        <label for="admission_date" class="col-md-1 col-form-label">Admissão</label>
         <div class="col-md-3">
             <input type="date" class="form-control" id="admission_date" name="admission_date" value="{{ $researcher->admission_date }}">
         </div>
@@ -80,8 +80,8 @@
 </fieldset>
 <fieldset id="fieldset-professor">
     <legend>Professor</legend>
-    <div class="form-group">
-        <label for="area" class="col-md-2 control-label">Área de Atuação</label>
+    <div class="form-group row">
+        <label for="area" class="col-md-2 col-form-label">Área de Atuação</label>
         <div class="col-md-3">
             <select class="form-control" id="area" name="area">
                 <option value="B" {{ $researcher->field === 'B' ? 'selected' : '' }}>Biociências</option>
@@ -89,7 +89,7 @@
                 <option value="H" {{ $researcher->field === 'H' ? 'selected' : '' }}>Humanas</option>
             </select>
         </div>
-        <label for="concurso" class="col-md-2 control-label">Disciplina de Concurso</label>
+        <label for="concurso" class="col-md-2 col-form-label">Disciplina de Concurso</label>
         <div class="col-md-5">
             <select class="form-control" id="concurso" name="concurso">
                 @foreach ($subjects as $subject)
@@ -100,8 +100,8 @@
             </select>
         </div>
     </div>
-    <div class="form-group">
-        <label for="titulacao" class="col-md-2 control-label">Titulação</label>
+    <div class="form-group row">
+        <label for="titulacao" class="col-md-2 col-form-label">Titulação</label>
         <div class="col-md-3">
             <select class="form-control" id="titulacao" name="titulacao">
                 <option value="E" {{ $researcher->title == 'E' ? ' selected' : '' }}>Especialista</option>
@@ -110,30 +110,30 @@
                 <option value="P" {{ $researcher->title == 'P' ? ' selected' : '' }}>PhD</option>
             </select>
         </div>
-        <label for="lattes" class="col-md-1 control-label">Lattes</label>
+        <label for="lattes" class="col-md-1 col-form-label">Lattes</label>
         <div class="col-md-6">
             <input class="form-control" id="lattes" name="lattes" value="{{ $researcher->lattes }}">
         </div>
     </div>
-    <div class="form-group">
-        <label for="disciplinas" class="col-md-2 control-label">Disciplinas Ministradas</label>
+    <div class="form-group row">
+        <label for="disciplinas" class="col-md-2 col-form-label">Disciplinas Ministradas</label>
         <div class="col-md-10">
             <input class="form-control" type="text" id="disciplinas" name="disciplinas" value="{{ $researcher->subjects->implode(';') }}">
         </div>
     </div>
-    <div class="form-group">
-        <label for="projetos" class="col-md-2 control-label">Projetos de Extensão</label>
+    <div class="form-group row">
+        <label for="projetos" class="col-md-2 col-form-label">Projetos de Extensão</label>
         <div class="col-md-10">
             <input class="form-control" type="text" id="projetos" name="projetos" value="{{ $researcher->projects }}">
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group row">
         <label for="pesquisas" class="col-md-2 control-label">Linhas de Pesquisa</label>
         <div class="col-md-10">
             <input class="form-control" type="text" id="pesquisas" name="pesquisas" value="{{ $researcher->rechearches }}">
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group row">
         <label for="palavrachaves" class="col-md-2 control-label">Palavras-chaves</label>
         <div class="col-md-10">
             <input class="form-control" type="text" id="palavrachaves" name="palavras" value="{{ $researcher->keywords }}">
