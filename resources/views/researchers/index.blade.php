@@ -5,7 +5,7 @@
 
 <form role="form" class="form-horizontal" id="search-servidor">
     <div id="filtering">
-        <div class="form-group">
+        <div class="form-group row">
             <div class="col-md-3">
                 <select class="form-control cb-attribute">
                     <option value="nome">Nome Completo</option>
@@ -26,9 +26,7 @@
                     <option value="pesquisa">Linhas de Pesquisa</option>
                 </select>
             </div>
-            <div class="input-filter">
-                <div class="col-md-8"><input class="form-control" name="nome"></div>
-            </div>
+            <div class="col-md-8"><input class="form-control" name="nome"></div>
         </div>
     </div>
     <button class="btn btn-primary" type="button" id="add-filter">Adicionar Filtro</button>
@@ -122,5 +120,5 @@
     @endforeach
 </table>
 
-<a href="#" class="btn btn-default">Exportar para PDF</a>
+<a href="#" class="btn btn-info">Exportar para PDF</a>
 @endsection
