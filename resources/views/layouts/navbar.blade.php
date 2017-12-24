@@ -2,13 +2,21 @@
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <a class="navbar-brand" href="/">Catalogo de Pesquisadores</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#main-navbar"
+                aria-controls="main-navbar"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="main-navbar">
+        @auth
+        <div class="navbar-collapse collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <li class="nav-item{{ request()->is('/') ? ' active' : '' }}">
                     <a class="nav-link" href="/">Principal</a>
                 </li>
                 <li class="dropdown nav-item">
@@ -16,12 +24,39 @@
                         Cadastros
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a class="dropdown-item" href="/researchers/create">Servidor</a></li>
-                        <li><a class="dropdown-item" href="/subjects/create">Disciplina</a></li>
-                        <li><a class="dropdown-item" href="/keywords/create">Palavra-chave</a></li>
-                        <li><a class="dropdown-item" href="/projects/create">Projetos de Extensão</a></li>
-                        <li><a class="dropdown-item" href="/researches/create">Linhas de Pesquisa</a></li>
-                        <li><a class="dropdown-item" href="/roles/create">Funções</a></li>
+                        <li>
+                            <a class="dropdown-item{{ request()->is('researchers/create') ? ' active' : '' }}"
+                               href="/researchers/create"
+                            >
+                                Servidor
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item{{ request()->is('subjects/create') ? ' active' : '' }}"
+                               href="/subjects/create"
+                            >
+                                Disciplina
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/keywords/create">
+                                Palavra-chave
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/projects/create">
+                                Projetos de Extensão
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/researches/create">
+                                Linhas de Pesquisa</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/roles/create">
+                                Funções
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown nav-item">
@@ -29,18 +64,32 @@
                         Relatórios
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a class="dropdown-item" href="/researchers">Servidor</a></li>
-                        <li><a class="dropdown-item" href="/subjects">Disciplina</a></li>
-                        <li><a class="dropdown-item" href="/keywords">Palavra-chave</a></li>
-                        <li><a class="dropdown-item" href="/projects">Projetos de Extensão</a></li>
-                        <li><a class="dropdown-item" href="/researches">Linhas de Pesquisa</a></li>
-                        <li><a class="dropdown-item" href="/roles">Funções</a></li>
+                        <li>
+                            <a class="dropdown-item" href="/researchers">Servidor</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/subjects">Disciplina</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/keywords">Palavra-chave</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/projects">Projetos de Extensão</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/researches">Linhas de Pesquisa</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/roles">Funções</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="dropdown nav-item">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Olá, Usuário<span class="caret"></span></a>
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        Olá, {{ request()->user()->name }}
+                    </a>
                     <ul class="dropdown-menu" role="menu">
                         <li>
                             <a class="dropdown-item" href="/settings">
@@ -59,6 +108,7 @@
                     </ul>
                 </li>
             </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </div><!-- .navbar-collapse -->
+        @endauth
+    </div><!-- .container -->
 </nav>
