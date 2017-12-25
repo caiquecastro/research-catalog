@@ -25,6 +25,13 @@ class ResearcherRequest extends FormRequest
     {
         return [
             'fullname' => 'required',
+            'birthday' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
+            'mobile_phone' => 'required',
+            'role_id' => 'required',
+            'admission_date' => 'required',
         ];
     }
 }
