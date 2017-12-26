@@ -38,9 +38,9 @@
         </div>
         <label for="phone" class="col-md-1 col-form-label">Telefone</label>
         <div class="col-md-2">
-            <input type="text"
+            <input type="tel"
                    id="phone"
-                   class="telefone form-control"
+                   class="form-control"
                    name="phone"
                    value="{{ $researcher->phone }}"
                    v-mask="'(##) ####-####'"
@@ -48,9 +48,9 @@
         </div>
         <label for="mobile_phone" class="col-md-1 col-form-label">Celular</label>
         <div class="col-md-2">
-            <input type="text"
+            <input type="tel"
                    id="mobile_phone"
-                   class="celular form-control"
+                   class="form-control"
                    name="mobile_phone"
                    value="{{ $researcher->mobile_phone }}"
                    v-mask="'(##) #####-####'"
