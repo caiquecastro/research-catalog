@@ -2,20 +2,6 @@
 
     $(".col-nascimento, .col-celular, .col-telefone, .col-situacao, .col-area, .col-endereco, .col-sexo, .col-email, .col-lattes, .col-titulacao, .col-admissao, .col-nascimento, .col-projetos, .col-pesquisas").hide();
 
-    var attr_size = 0;
-
-    var maskBehavior = function(val) {
-        return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
-    }, options = {
-        onKeyPress: function(val, e, field, options) {
-            field.mask(maskBehavior, apply({}, arguments), options);
-        }
-    };
-
-    $('.telefone').mask("(00) 0000-0000");
-    $('.celular').mask("(00) 00000-0000");
-    $('.mixedphone').mask(maskBehavior, options);
-
     $("#fieldset-professor").hide();
 
     $("body").on('click', '.btn-remove', function() {

@@ -24,7 +24,6 @@
             </div>
         </div>
         <script src="/js/app.js"></script>
-        <script src="/js/vendor/jquery.mask.min.js"></script>
         <script src="/js/vendor/jquery.tokeninput.js"></script>
         <script src="/js/vendor/main.js"></script>
     </body>
