@@ -38,11 +38,23 @@
         </div>
         <label for="phone" class="col-md-1 col-form-label">Telefone</label>
         <div class="col-md-2">
-            <input type="text" id="phone" class="telefone form-control" name="phone" value="{{ $researcher->phone }}">
+            <input type="text"
+                   id="phone"
+                   class="telefone form-control"
+                   name="phone"
+                   value="{{ $researcher->phone }}"
+                   v-mask="'(##) ####-####'"
+            >
         </div>
         <label for="mobile_phone" class="col-md-1 col-form-label">Celular</label>
         <div class="col-md-2">
-            <input type="text" id="mobile_phone" class="celular form-control" name="mobile_phone" value="{{ $researcher->mobile_phone }}">
+            <input type="text"
+                   id="mobile_phone"
+                   class="celular form-control"
+                   name="mobile_phone"
+                   value="{{ $researcher->mobile_phone }}"
+                   v-mask="'(##) #####-####'"
+            >
         </div>
     </div>
 </fieldset>
