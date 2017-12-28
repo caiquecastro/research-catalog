@@ -8,7 +8,7 @@ volumes:
 
 services:
   postgres:
-    image: ambientum/postgres:9.6
+    image: postgres:10
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
@@ -19,7 +19,7 @@ services:
       - POSTGRES_PASSWORD=catalog_pass
 
   cache:
-    image: ambientum/redis:4.0
+    image: redis:4.0-alpine
     command: --appendonly yes
     volumes:
       - redis-data:/data
