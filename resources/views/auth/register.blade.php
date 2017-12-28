@@ -21,17 +21,20 @@
                     </div>
                 </div>
 
-                <div class="form-group row{{ $errors->has('email') ? ' has-error' : '' }}">
+                <div class="form-group row">
                     <label for="email" class="col-sm-3 col-form-label">E-Mail Address</label>
 
                     <div class="col-md-9">
-                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                        @if ($errors->has('email'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('email') }}</strong>
-                            </span>
-                        @endif
+                        <input id="email"
+                               type="email"
+                               class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                               name="email"
+                               value="{{ old('email') }}"
+                               required
+                        >
+                        <div class="invalid-feedback">
+                            {{ $errors->first('email') }}
+                        </div>
                     </div>
                 </div>
 
@@ -39,13 +42,15 @@
                     <label for="password" class="col-sm-3 col-form-label">Password</label>
 
                     <div class="col-sm-9">
-                        <input id="password" type="password" class="form-control" name="password" required>
-
-                        @if ($errors->has('password'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </span>
-                        @endif
+                        <input id="password"
+                               type="password"
+                               class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                               name="password"
+                               required
+                        >
+                        <div class="invalid-feedback">
+                            {{ $errors->first('password') }}
+                        </div>
                     </div>
                 </div>
 
