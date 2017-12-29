@@ -14,7 +14,9 @@ before_script:
   - php artisan key:generate
   - php artisan migrate
 
+script: vendor/bin/phpunit
+
 jobs:
   include:
-    - script: vendor/bin/phpunit
-    - script: npm install
+    - stage: Build front-end assets
+      script: npm install
