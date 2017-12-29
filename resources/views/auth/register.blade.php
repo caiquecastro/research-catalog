@@ -11,13 +11,17 @@
                     <label for="name" class="col-sm-3 col-form-label">Nome</label>
 
                     <div class="col-sm-9">
-                        <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                        @if ($errors->has('name'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('name') }}</strong>
-                            </span>
-                        @endif
+                        <input id="name"
+                               type="text"
+                               class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                               name="name"
+                               value="{{ old('name') }}"
+                               required
+                               autofocus
+                        >
+                        <div class="invalid-feedback">
+                            {{ $errors->first('name') }}
+                        </div>
                     </div>
                 </div>
 
