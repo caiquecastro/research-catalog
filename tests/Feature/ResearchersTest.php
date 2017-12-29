@@ -63,7 +63,7 @@ class ResearchersTest extends BrowserKitTestCase
             ->type('John Doe', 'fullname')
             ->press('Salvar');
 
-        $this->see('The birthday field is required');
+        $this->see('O campo data de nascimento é obrigatório.');
     }
 
     public function testResearcherMustHaveAnEmail()
@@ -75,7 +75,7 @@ class ResearchersTest extends BrowserKitTestCase
             ->type('1990-06-20', 'birthday')
             ->press('Salvar');
 
-        $this->see('The email field is required');
+        $this->see('O campo e-mail é obrigatório.');
     }
 
     public function testResearcherMustHaveAnAddress()
@@ -88,7 +88,7 @@ class ResearchersTest extends BrowserKitTestCase
             ->type('johndoe@email.com', 'email')
             ->press('Salvar');
 
-        $this->see('The address field is required');
+        $this->see('O campo endereço é obrigatório.');
     }
 
     public function testResearcherMustHaveAPhoneNumber()
@@ -102,7 +102,7 @@ class ResearchersTest extends BrowserKitTestCase
             ->type('Brooklin Av.', 'address')
             ->press('Salvar');
 
-        $this->see('The phone field is required');
+        $this->see('O campo telefone é obrigatório.');
     }
 
     public function testResearcherMustHaveAMobilePhoneNumber()
@@ -117,7 +117,7 @@ class ResearchersTest extends BrowserKitTestCase
             ->type('(12) 3636-3636', 'phone')
             ->press('Salvar');
 
-        $this->see('The mobile phone field is required');
+        $this->see('O campo celular é obrigatório.');
     }
 
     public function testResearcherMustHaveARole()
@@ -133,7 +133,7 @@ class ResearchersTest extends BrowserKitTestCase
             ->type('(12) 99212-0505', 'mobile_phone')
             ->press('Salvar');
 
-        $this->see('The role id field is required');
+        $this->see('O campo função é obrigatório.');
     }
 
     public function testResearcherMustHaveAnAdmissionDate()
@@ -151,6 +151,6 @@ class ResearchersTest extends BrowserKitTestCase
             ->select($role->id, 'role_id')
             ->press('Salvar');
 
-        $this->see('The admission date field is required');
+        $this->see('O campo data de admissão é obrigatório.');
     }
 }

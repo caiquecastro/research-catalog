@@ -117,9 +117,15 @@ return [
     */
 
     'attributes' => [
-        'name' => 'nome',
+        'admission_date' => 'data de admissão',
+        'address' => 'endereço',
+        'birthday' => 'data de nascimento',
         'email' => 'e-mail',
+        'mobile_phone' => 'celular',
+        'name' => 'nome',
         'password' => 'senha',
+        'phone' => 'telefone',
+        'role_id' => 'função',
     ],
 
 ];
