@@ -21,7 +21,7 @@
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
         "popper.js": "^1.12",
-        "vue": "^2.5.7",
+        "vue": "^2.5.13",
         "bootswatch": "^4.0.0-beta.2",
         "vue-the-mask": "^0.11.1"
     }
