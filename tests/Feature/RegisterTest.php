@@ -19,7 +19,7 @@ class RegisterTest extends BrowserKitTestCase
         $this->visit('register')
             ->type('johndoe@example.com', 'email')
             ->press('Cadastre-se')
-            ->see('O valor informado para o campo email já está em uso.');
+            ->see('O valor informado para o campo e-mail já está em uso.');
     }
 
     public function testPreventRegisterUserWithInvalidPassword()
@@ -28,5 +28,20 @@ class RegisterTest extends BrowserKitTestCase
             ->type('123', 'password')
             ->press('Cadastre-se')
             ->see('O campo senha deve conter no mínimo 6 caracteres.');
+    }
+
+    public function testPreventRegisterUserWithInvalidEmail()
+    {
+        $this->visit('register')
+            ->type('a@a', 'email')
+            ->press('Cadastre-se')
+            ->see('O campo e-mail não contém um endereço de email válido.');
+    }
+
+    public function testPreventRegisterUserEmptyName()
+    {
+        $this->visit('register')
+            ->press('Cadastre-se')
+            ->see('O campo nome é obrigatório.');
     }
 }
