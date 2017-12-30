@@ -37,7 +37,7 @@ services:
       - php
 
   php:
-    image: php:7.1-fpm
+    build: ./docker/php
     volumes:
       - .:/var/www/html
     links:
