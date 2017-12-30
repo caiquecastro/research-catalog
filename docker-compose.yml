@@ -26,12 +26,20 @@ services:
     ports:
       - "6379:6379"
 
-  app:
-    image: ambientum/php:7.1-nginx
-    volumes:
-      - .:/var/www/app
+  web:
+    image: nginx:alpine
     ports:
-      - "80:8080"
+      - "80:80"
+    volumes:
+      - ./public:/usr/share/nginx/html
+      - ./docker/nginx:/etc/nginx/conf.d
+    depends_on:
+      - php
+
+  php:
+    image: php:7.1-fpm
+    volumes:
+      - .:/var/www/html
     links:
       - postgres
       - cache
