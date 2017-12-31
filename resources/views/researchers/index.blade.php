@@ -3,7 +3,7 @@
 @section('content')
 <h1>Consulta de Servidor</h1>
 
-<form role="form" class="form-horizontal" id="search-servidor">
+<form id="search-servidor">
     <div id="filtering">
         <div class="form-group row">
             <div class="col-md-3">
