@@ -20,3 +20,6 @@ jobs:
   include:
     - stage: Build front-end assets
       script: npm install
+
+notifications:
+  email: false
