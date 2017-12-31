@@ -44,4 +44,15 @@ class RoleTest extends BrowserKitTestCase
         $this->assertResponseOk();
         $this->assertViewHas('roles');
     }
+
+    public function testShowsSuccessMessageAfterCreateRole()
+    {
+        $this->actingAs(factory(\App\User::class)->create());
+
+        $this->visit('/roles/create')
+             ->type('Professor', 'name')
+             ->press('Salvar');
+
+        $this->see('Função cadastrada com sucesso');
+    }
 }
