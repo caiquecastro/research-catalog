@@ -12,7 +12,7 @@
                 <td>{{ $keyword->id }}</td>
                 <td>{{ $keyword->name }}</td>
                 <td>
-                    <form action="{{ route('keywords.destroy', $keyword) }}" method="post" class="visible-lg-inline">
+                    <form action="{{ route('keywords.destroy', $keyword) }}" method="post" class="d-inline-block">
                         {{ method_field('DELETE') }}
                         {{ csrf_field() }}
                         <button class="btn btn-danger btn-sm">

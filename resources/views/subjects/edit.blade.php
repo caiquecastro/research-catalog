@@ -5,7 +5,7 @@
 
 @include('partials.messages')
 
-<form role="form" id="form-funcao" class="form-horizontal" method="post" action="{{ route('subjects.update', $subject) }}">
+<form method="post" action="{{ route('subjects.update', $subject) }}">
     {{ method_field('PATCH') }}
     @include('subjects.form')
 </form>

@@ -14,7 +14,7 @@
                 <td>{{ $role->name }}</td>
                 <td>{{ $role->is_professor ? 'Sim' : 'Não' }}</td>
                 <td>
-                    <form action="{{ route('roles.destroy', $role) }}" method="post" class="visible-lg-inline">
+                    <form action="{{ route('roles.destroy', $role) }}" method="post" class="d-inline-block">
                         {{ method_field('DELETE') }}
                         {{ csrf_field() }}
                         <button class="btn btn-danger btn-sm">

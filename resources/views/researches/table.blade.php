@@ -12,7 +12,7 @@
             <td>{{ $research->id }}</td>
             <td>{{ $research->name }}</td>
             <td>
-                <form action="{{ route('researches.destroy', $research) }}" method="post" class="visible-lg-inline">
+                <form action="{{ route('researches.destroy', $research) }}" method="post" class="d-inline-block">
                     {{ method_field('DELETE') }}
                     {{ csrf_field() }}
                     <button class="btn btn-danger btn-sm">
