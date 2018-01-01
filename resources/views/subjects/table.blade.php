@@ -1,29 +1,24 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Disciplina</th>
-            <th>Ação</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($subjects as $subject)
-            <tr>
-                <td>{{ $subject->id }}</td>
-                <td>{{ $subject->name }}</td>
-                <td>
-                    <form action="{{ route('subjects.destroy', $subject) }}" method="post" class="d-inline-block">
-                        {{ method_field('DELETE') }}
-                        {{ csrf_field() }}
-                        <button class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </form>
-                    <a class="btn btn-warning btn-sm" href="{{ route('subjects.edit', $subject) }}">
-                        <i class="fas fa-edit"></i>
-                    </a>
-                </td>
-            </tr>
-        @endforeach
-    </tbody>
-</table>
+<table-component
+    :data="{{ $subjects }}"
+    table-class="table"
+    sort-by="name"
+    :show-filter="false"
+    :show-caption="false"
+>
+    <table-column show="id" label="#"></table-column>
+    <table-column show="name" label="Nome"></table-column>
+    <table-column label="Ações" :sortable="false" :filterable="false">
+        <template scope="row">
+            <form :action="'/subjects/' + row.id" method="post" class="d-inline-block">
+                {{ method_field('DELETE') }}
+                {{ csrf_field() }}
+                <button class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </form>
+            <a class="btn btn-warning btn-sm" :href="'/subjects/' + row.id + '/edit'">
+                <i class="fas fa-edit"></i>
+            </a>
+        </template>
+    </table-column>
+</table-component>
