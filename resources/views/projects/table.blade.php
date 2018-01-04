@@ -1,29 +1,24 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Projeto de Extensão</th>
-            <th>Ação</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($projects as $project)
-        <tr>
-            <td>{{ $project->id }}</td>
-            <td>{{ $project->name }}</td>
-            <td>
-                <form action="{{ route('projects.destroy', $project) }}" method="post" class="d-inline-block">
-                    {{ method_field('DELETE') }}
-                    {{ csrf_field() }}
-                    <button class="btn btn-danger btn-sm">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </form>
-                <a class="btn btn-warning btn-sm" href="{{ route('projects.edit', $project) }}">
-                    <i class="fas fa-edit"></i>
-                </a>
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
+<table-component
+    :data="{{ $projects }}"
+    table-class="table"
+    sort-by="name"
+    :show-filter="false"
+    :show-caption="false"
+>
+    <table-column show="id" label="#"></table-column>
+    <table-column show="name" label="Projeto de Extenção"></table-column>
+    <table-column label="Ações" :sortable="false" :filterable="false">
+        <template scope="row">
+            <form :action="'/projects/' + row.id" method="post" class="d-inline-block">
+                {{ method_field('DELETE') }}
+                {{ csrf_field() }}
+                <button class="btn btn-danger btn-sm">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </form>
+            <a class="btn btn-warning btn-sm" :href="'/projects/' + row.id + '/edit'">
+                <i class="fas fa-edit"></i>
+            </a>
+        </template>
+    </table-column>
+</table-component>
