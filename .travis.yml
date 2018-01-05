@@ -2,7 +2,6 @@ language: php
 
 php:
   - 7.2
-  - nightly
 
 services:
   - postgresql
@@ -14,12 +13,9 @@ before_script:
   - php artisan key:generate
   - php artisan migrate
 
-script: vendor/bin/phpunit
-
-jobs:
-  include:
-    - stage: Build front-end assets
-      script: npm install
+script:
+  - vendor/bin/phpunit
+  - npm install
 
 notifications:
   email: false
