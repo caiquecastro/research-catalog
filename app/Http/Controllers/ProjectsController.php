@@ -87,8 +87,12 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Project $project, Request $request)
     {
-        //
+        $project->delete();
+
+        $request->session()->flash('message', 'Projeto de Extensão excluido com sucesso');
+
+        return redirect()->route('projects.create');
     }
 }
