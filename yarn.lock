@@ -914,17 +914,17 @@ boom@5.x.x:
   dependencies:
     hoek "4.x.x"
 
-bootstrap@^4.0.0-beta.3, bootstrap@~4.0.0-beta.2:
+bootstrap@^4.0.0-beta.3:
   version "4.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.0.0-beta.3.tgz#60f0660bc3d121176514b361f6f83201c7ff8874"
 
-bootswatch@^4.0.0-beta.2:
-  version "4.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/bootswatch/-/bootswatch-4.0.0-beta.2.tgz#e8a2947fd882b839cb18cb8e9bb2ad682b4f2710"
+bootswatch@^4.0.0-beta.3:
+  version "4.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/bootswatch/-/bootswatch-4.0.0-beta.3.tgz#5339dce055c1011f291467364b0a2588180e8c37"
   dependencies:
-    bootstrap "~4.0.0-beta.2"
+    bootstrap "^4.0.0-beta.3"
     jquery ">=1.9.1"
-    popper.js "^1.11.0"
+    popper.js "^1.12.9"
 
 brace-expansion@^1.1.7:
   version "1.1.8"
@@ -4603,7 +4603,7 @@ pngquant-bin@^3.0.0:
     bin-wrapper "^3.0.0"
     logalot "^2.0.0"
 
-popper.js@^1.11.0:
+popper.js@^1.12.9:
   version "1.12.9"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.12.9.tgz#0dfbc2dff96c451bb332edcfcfaaf566d331d5b3"
 
