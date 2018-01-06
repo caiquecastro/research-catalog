@@ -6383,9 +6383,9 @@ vue-style-loader@^3.0.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-table-component@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/vue-table-component/-/vue-table-component-1.8.0.tgz#f367ef2b32546a65b3e263175f22f915385c8e4f"
+vue-table-component@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/vue-table-component/-/vue-table-component-1.8.1.tgz#d69553f2a8d70ff20e8e4d96852a4d77a65f415c"
 
 vue-template-compiler@^2.0.0:
   version "2.5.13"
