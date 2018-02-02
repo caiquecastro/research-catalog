@@ -18,6 +18,19 @@ class ProjectTest extends TestCase
         $response->assertStatus(200);
     }
 
+    public function testItRequiresANameToBeCreated()
+    {
+        $this->actingAs(factory(\App\User::class)->create());
+
+        $response = $this->post('/projects', [
+            //
+        ]);
+
+        $response->assertSessionHasErrors([
+            'name' => 'O campo nome é obrigatório.',
+        ]);
+    }
+
     public function testItCanBeListed()
     {
         $this->actingAs(factory(\App\User::class)->create());
