@@ -8,7 +8,7 @@
     <table-column show="id" label="#"></table-column>
     <table-column show="name" label="Projeto de Extenção"></table-column>
     <table-column label="Ações" :sortable="false" :filterable="false">
-        <template scope="row">
+        <template slot-scope="row">
             <form :action="'/projects/' + row.id" method="post" class="d-inline-block">
                 {{ method_field('DELETE') }}
                 {{ csrf_field() }}
