@@ -9,19 +9,29 @@
                     id="fullname"
                     name="fullname"
                     maxlength="60"
-                    value="{{ $researcher->fullname }}"
+                    value="{{ old('fullname', $researcher->fullname) }}"
                     required
             >
         </div>
         <label for="birthday" class="col-md-1 col-form-label">Nascimento</label>
         <div class="col-md-3">
-            <input type="date" class="form-control" id="birthday" name="birthday" value="{{ $researcher->birthday }}">
+            <input type="date"
+                   class="form-control"
+                   id="birthday"
+                   name="birthday"
+                   value="{{ old('birthday', $researcher->birthday) }}"
+            >
         </div>
     </div>
     <div class="form-group row">
         <label for="address" class="col-md-2 col-form-label">Endereço Residencial</label>
         <div class="col-md-6">
-            <input type="text" class="form-control" id="address" name="address" value="{{ $researcher->address }}">
+            <input type="text"
+                   class="form-control"
+                   id="address"
+                   name="address"
+                   value="{{ old('address', $researcher->address) }}"
+            >
         </div>
         <label for="gender" class="col-md-1 col-form-label">Sexo</label>
         <div class="col-md-3">
