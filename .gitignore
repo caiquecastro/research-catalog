@@ -1,11 +1,11 @@
 /node_modules
-/public/hot
-/public/storage
 /public/css
+/public/hot
 /public/js
+public/mix-manifest.json
+/public/storage
 /storage/*.key
 /vendor
-/.idea
 /.vagrant
 Homestead.json
 Homestead.yaml
