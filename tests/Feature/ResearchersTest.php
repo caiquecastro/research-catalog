@@ -66,6 +66,28 @@ class ResearchersTest extends BrowserKitTestCase
         $this->see('O campo data de nascimento é obrigatório.');
     }
 
+    public function testResearcherNameIsPreservedOnInputFieldOnValidationError()
+    {
+        $this->actingAs(factory(\App\User::class)->create());
+
+        $this->visit('researchers/create')
+            ->type('John Doe', 'fullname')
+            ->press('Salvar');
+
+        $this->see('John Doe');
+    }
+
+    public function testResearcherBirthdayIsPreservedOnInputFieldOnValidationError()
+    {
+        $this->actingAs(factory(\App\User::class)->create());
+
+        $this->visit('researchers/create')
+            ->type('1990-05-01', 'birthday')
+            ->press('Salvar');
+
+        $this->see('1990-05-01');
+    }
+
     public function testResearcherMustHaveAnEmail()
     {
         $this->actingAs(factory(\App\User::class)->create());
@@ -89,6 +111,17 @@ class ResearchersTest extends BrowserKitTestCase
             ->press('Salvar');
 
         $this->see('O campo endereço é obrigatório.');
+    }
+
+    public function testResearcherAddressIsPreservedOnInputFieldOnValidationError()
+    {
+        $this->actingAs(factory(\App\User::class)->create());
+
+        $this->visit('researchers/create')
+            ->type('Brookling Avenue', 'address')
+            ->press('Salvar');
+
+        $this->see('Brookling Avenue');
     }
 
     public function testResearcherMustHaveAPhoneNumber()
