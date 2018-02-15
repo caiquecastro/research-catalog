@@ -5,7 +5,7 @@
     <div class="col-sm-6">
         <h1>Login</h1>
         <form method="POST" action="{{ route('login') }}">
-            {{ csrf_field() }}
+            @csrf
 
             <div class="form-group row">
                 <label for="email" class="col-sm-3 col-form-label">E-mail</label>
