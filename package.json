@@ -23,7 +23,7 @@
         "lodash": "^4.17.10",
         "moment": "^2.22.2",
         "popper.js": "^1.14.3",
-        "vue": "^2.5.16",
+        "vue": "^2.5.17",
         "vue-table-component": "^1.9.1",
         "vue-the-mask": "^0.11.1"
     }
