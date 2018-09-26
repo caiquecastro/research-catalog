@@ -5940,9 +5940,9 @@ vue-style-loader@^3.0.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-table-component@^1.9.1:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/vue-table-component/-/vue-table-component-1.9.1.tgz#eabec6494eece0654e73bd7cee1bdba9daa00c18"
+vue-table-component@^1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/vue-table-component/-/vue-table-component-1.9.2.tgz#d99a440fac041b7129fe3c7eede849bd52adec91"
 
 vue-template-compiler@^2.5.13:
   version "2.5.13"
