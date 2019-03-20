@@ -875,9 +875,9 @@ bootstrap@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.2.1.tgz#8f8bdca024dbf0e8644da32e918c8a03a90a5757"
 
-bootswatch@^4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/bootswatch/-/bootswatch-4.2.1.tgz#be402aeb8f9920c008c62f8a77c29a91a11b4c8a"
+bootswatch@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/bootswatch/-/bootswatch-4.3.1.tgz#be54748b420a1962dbcf9782605aac092f842e38"
 
 brace-expansion@^1.1.7:
   version "1.1.11"
