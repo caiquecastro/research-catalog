@@ -40,7 +40,7 @@ services:
     build: ./docker/php
     volumes:
       - .:/var/www/html
-    links:
+    depends_on:
       - postgres
       - cache
 
@@ -49,6 +49,6 @@ services:
     command: php artisan queue:listen
     volumes:
       - .:/var/www/app
-    links:
+    depends_on:
       - postgres
       - cache
