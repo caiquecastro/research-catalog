@@ -15,8 +15,9 @@ before_script:
   - touch public/mix-manifest.json
 
 script:
-  - vendor/bin/phpunit
   - npm install
+  - npm run production
+  - vendor/bin/phpunit
 
 notifications:
   email: false
