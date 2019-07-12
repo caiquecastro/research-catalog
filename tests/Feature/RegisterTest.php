@@ -33,7 +33,7 @@ class RegisterTest extends BrowserKitTestCase
     public function testPreventRegisterUserWithInvalidEmail()
     {
         $this->visit('register')
-            ->type('a@a', 'email')
+            ->type('abc', 'email')
             ->press('Cadastre-se')
             ->see('O campo e-mail não contém um endereço de email válido.');
     }
