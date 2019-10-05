@@ -45,7 +45,8 @@ services:
       - cache
 
   queue:
-    image: ambientum/php:7.1
+    image: php:7.3-cli
+    working_dir: /var/www/app
     command: php artisan queue:listen
     volumes:
       - .:/var/www/app
