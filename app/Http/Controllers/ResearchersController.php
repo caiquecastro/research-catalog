@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Role;
-use App\Researcher;
 use App\Http\Requests\ResearcherRequest;
+use App\Researcher;
+use App\Role;
 
 class ResearchersController extends Controller
 {

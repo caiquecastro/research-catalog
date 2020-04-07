@@ -3,8 +3,8 @@
 namespace Tests\Feature;
 
 use App\Role;
-use Tests\BrowserKitTestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\BrowserKitTestCase;
 
 class RoleTest extends BrowserKitTestCase
 {

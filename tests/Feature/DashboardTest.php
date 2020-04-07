@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use Tests\BrowserKitTestCase;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\BrowserKitTestCase;
 
 class DashboardTest extends BrowserKitTestCase
 {

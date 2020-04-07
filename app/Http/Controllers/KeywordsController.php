@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\KeywordRequest;
 use App\Keyword;
 use Illuminate\Http\Request;
-use App\Http\Requests\KeywordRequest;
 
 class KeywordsController extends Controller
 {
