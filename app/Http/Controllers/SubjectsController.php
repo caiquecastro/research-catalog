@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SubjectRequest;
 use App\Subject;
 use Illuminate\Http\Request;
-use App\Http\Requests\SubjectRequest;
 
 class SubjectsController extends Controller
 {
