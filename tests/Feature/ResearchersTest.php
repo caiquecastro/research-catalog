@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
+use App\Researcher;
 use App\Role;
 use App\User;
-use App\Researcher;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\BrowserKitTestCase;
 
