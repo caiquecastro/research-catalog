@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Keyword;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\BrowserKitTestCase;
 
@@ -13,7 +14,7 @@ class KeywordsTest extends BrowserKitTestCase
     {
         $this->actingAs(factory(\App\User::class)->create());
 
-        factory(\App\Keyword::class, 10)->create();
+        Keyword::factory()->count(10)->create();
 
         $this->get('keywords');
 
