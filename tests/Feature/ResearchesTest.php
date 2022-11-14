@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Research;
+use App\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\BrowserKitTestCase;
 

@@ -15,7 +15,7 @@ class RoleTest extends BrowserKitTestCase
     {
         $this->actingAs(User::factory()->create());
 
-        $role = factory(Role::class)->create();
+        $role = Role::factory()->create();
 
         $this->delete('roles/'.$role->id);
 
@@ -28,7 +28,7 @@ class RoleTest extends BrowserKitTestCase
     {
         $this->actingAs(User::factory()->create());
 
-        $role = factory(Role::class)->create();
+        $role = Role::factory()->create();
 
         $this->get('roles/'.$role->id.'/edit');
         $this->see('Editar Função');
