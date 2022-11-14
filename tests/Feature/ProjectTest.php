@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Project;
 use App\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;

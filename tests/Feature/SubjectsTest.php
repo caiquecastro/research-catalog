@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Subject;
+use App\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\BrowserKitTestCase;
 
@@ -11,9 +13,9 @@ class SubjectsTest extends BrowserKitTestCase
 
     public function testSubjectsIndexReturnHtmlWhenNotAjax()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
-        factory(\App\Subject::class, 10)->create();
+        Subject::factory()->count(10)->create();
 
         $this->get('subjects');
 

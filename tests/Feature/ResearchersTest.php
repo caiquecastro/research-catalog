@@ -2,6 +2,9 @@
 
 namespace Tests\Feature;
 
+use App\Role;
+use App\User;
+use App\Researcher;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\BrowserKitTestCase;
 
@@ -11,9 +14,9 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testAllResearchersAttributesArePersisted()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
-        $role = factory(\App\Role::class)->create();
+        $role = Role::factory()->create();
 
         $this->visit('researchers/create')
             ->type('John Doe', 'fullname')
@@ -28,7 +31,7 @@ class ResearchersTest extends BrowserKitTestCase
             ->type('2017-12-06', 'admission_date')
             ->press('Salvar');
 
-        $researcher = \App\Researcher::first();
+        $researcher = Researcher::first();
 
         $this->assertEquals('John Doe', $researcher->fullname);
         $this->assertEquals('1990-06-20', $researcher->birthday);
@@ -43,9 +46,9 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testResearcherCanBeEdited()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
-        $researcher = factory(\App\Researcher::class)->create();
+        $researcher = Researcher::factory()->create();
 
         $this->visit('researchers/'.$researcher->id.'/edit')
             ->type('Jane Doe', 'fullname')
@@ -57,7 +60,7 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testResearcherMustHaveABirthday()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $this->visit('researchers/create')
             ->type('John Doe', 'fullname')
@@ -68,7 +71,7 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testResearcherNameIsPreservedOnInputFieldOnValidationError()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $this->visit('researchers/create')
             ->type('John Doe', 'fullname')
@@ -79,7 +82,7 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testResearcherBirthdayIsPreservedOnInputFieldOnValidationError()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $this->visit('researchers/create')
             ->type('1990-05-01', 'birthday')
@@ -90,7 +93,7 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testResearcherMustHaveAnEmail()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $this->visit('researchers/create')
             ->type('John Doe', 'fullname')
@@ -102,7 +105,7 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testResearcherMustHaveAnAddress()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $this->visit('researchers/create')
             ->type('John Doe', 'fullname')
@@ -115,7 +118,7 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testResearcherAddressIsPreservedOnInputFieldOnValidationError()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $this->visit('researchers/create')
             ->type('Brookling Avenue', 'address')
@@ -126,7 +129,7 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testResearcherMustHaveAPhoneNumber()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $this->visit('researchers/create')
             ->type('John Doe', 'fullname')
@@ -140,7 +143,7 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testResearcherMustHaveAMobilePhoneNumber()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $this->visit('researchers/create')
             ->type('John Doe', 'fullname')
@@ -155,7 +158,7 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testResearcherMustHaveARole()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $this->visit('researchers/create')
             ->type('John Doe', 'fullname')
@@ -171,8 +174,8 @@ class ResearchersTest extends BrowserKitTestCase
 
     public function testResearcherMustHaveAnAdmissionDate()
     {
-        $this->actingAs(factory(\App\User::class)->create());
-        $role = factory(\App\Role::class)->create();
+        $this->actingAs(User::factory()->create());
+        $role = Role::factory()->create();
 
         $this->visit('researchers/create')
             ->type('John Doe', 'fullname')

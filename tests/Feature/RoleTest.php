@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Role;
+use App\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\BrowserKitTestCase;
 
@@ -12,7 +13,7 @@ class RoleTest extends BrowserKitTestCase
 
     public function testRolesCanBeDeleted()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $role = factory(Role::class)->create();
 
@@ -25,7 +26,7 @@ class RoleTest extends BrowserKitTestCase
 
     public function testRolesCanBeEdited()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $role = factory(Role::class)->create();
 
@@ -37,7 +38,7 @@ class RoleTest extends BrowserKitTestCase
 
     public function testRolesAreListedOnIndex()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $this->get('roles');
 
@@ -47,7 +48,7 @@ class RoleTest extends BrowserKitTestCase
 
     public function testShowsSuccessMessageAfterCreateRole()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $this->visit('/roles/create')
              ->type('Professor', 'name')

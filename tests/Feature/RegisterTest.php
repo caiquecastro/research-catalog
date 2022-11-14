@@ -12,7 +12,7 @@ class RegisterTest extends BrowserKitTestCase
 
     public function testPreventRegisterDuplicatedUserEmail()
     {
-        $user = factory(User::class)->create([
+        $user = User::factory()->create([
             'email' => 'johndoe@example.com',
         ]);
 
