@@ -12,7 +12,7 @@ class KeywordsTest extends BrowserKitTestCase
 
     public function testItShowsAListOfKeywords()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         Keyword::factory()->count(10)->create();
 

@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
@@ -11,7 +12,7 @@ class ProjectTest extends TestCase
 
     public function testItCanBeCreatedByAForm()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $response = $this->get('/projects/create');
 
@@ -20,7 +21,7 @@ class ProjectTest extends TestCase
 
     public function testItRequiresANameToBeCreated()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
         $response = $this->post('/projects', [
             //
@@ -33,9 +34,9 @@ class ProjectTest extends TestCase
 
     public function testItCanBeListed()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
-        factory(\App\Project::class, 10)->create();
+        Project::factory()->count(10)->create();
 
         $response = $this->get('projects');
 
@@ -45,9 +46,9 @@ class ProjectTest extends TestCase
 
     public function testItCanBeDeleted()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
-        $project = factory(\App\Project::class)->create();
+        $project = Project::factory()->create();
 
         $response = $this->delete('projects/'.$project->id);
 
