@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: ['7.2']
+        php: ['7.3']
 
     name: PHP ${{ matrix.php }}
 
@@ -61,3 +61,6 @@ jobs:
 
       - name: Execute tests
         run: vendor/bin/phpunit
+
+      #- name: Build the Docker image
+      #  run: docker build . --file ./docker/php/Dockerfile --tag research-catalog:$(date +%s)
