@@ -36,6 +36,11 @@ jobs:
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
           coverage: none
 
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-interaction --no-progress
 
@@ -50,6 +55,9 @@ jobs:
 
       - name: Migrate database
         run: php artisan migrate
+
+      - name: Install yarn dependencies
+        run: yarn install
 
       - name: Execute tests
         run: vendor/bin/phpunit
