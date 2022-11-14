@@ -11,11 +11,25 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: true
+      matrix:
+        php: ['8.0', '8.1', '8.2']
+
+    name: PHP ${{ matrix.php }}
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file ./docker/php/Dockerfile --tag research-catalog:latest
-    - name: Run tests
-      run: docker run research-catalog ./vendor/bin/phpunit
-    - name: Tag docker image
-      run: docker tag research-catalog:latest research-catalog:$(date +%s)
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php }}
+
+    #- name: Build the Docker image
+    #  run: docker build . --file ./docker/php/Dockerfile --tag research-catalog:latest
+    #- name: Run tests
+    #  run: docker run research-catalog ./vendor/bin/phpunit
+    #- name: Tag docker image
+    #  run: docker tag research-catalog:latest research-catalog:$(date +%s)
