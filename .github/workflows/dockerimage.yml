@@ -27,6 +27,9 @@ jobs:
       with:
         php-version: ${{ matrix.php }}
 
+    - name: Install Composer dependencies
+      run: composer install --prefer-dist --no-interaction --no-progress
+
     #- name: Build the Docker image
     #  run: docker build . --file ./docker/php/Dockerfile --tag research-catalog:latest
     #- name: Run tests
