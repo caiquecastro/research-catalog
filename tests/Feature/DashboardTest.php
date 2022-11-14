@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\BrowserKitTestCase;
 
@@ -11,7 +12,7 @@ class DashboardTest extends BrowserKitTestCase
 
     public function testItShowsTheUserNameOnNavbar()
     {
-        $user = factory(\App\User::class)->create([
+        $user = User::factory()->create([
             'name' => 'John Doe',
         ]);
 
