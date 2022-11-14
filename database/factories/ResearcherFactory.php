@@ -25,9 +25,9 @@ class ResearcherFactory extends Factory
             'phone' => $this->faker->phoneNumber,
             'mobile_phone' => $this->faker->phoneNumber,
             'status' => $this->faker->randomElement(['active']),
-            'role_id' => function () {
+            /* 'role_id' => function () {
                 return factory(App\Role::class)->create()->id;
-            },
+            }, */
             'admission_date' => $this->faker->dateTimeThisDecade,
         ];
     }
