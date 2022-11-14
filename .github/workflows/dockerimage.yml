@@ -30,6 +30,9 @@ jobs:
     - name: Install Composer dependencies
       run: composer install --prefer-dist --no-interaction --no-progress
 
+    - name: Execute tests
+      run: vendor/bin/phpunit
+
     #- name: Build the Docker image
     #  run: docker build . --file ./docker/php/Dockerfile --tag research-catalog:latest
     #- name: Run tests
