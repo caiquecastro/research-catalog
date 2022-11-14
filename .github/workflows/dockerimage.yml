@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: ['7.2']
+        php: ['7.4']
 
     name: PHP ${{ matrix.php }}
 
@@ -44,9 +44,6 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-interaction --no-progress
 
-      - name: Update Composer
-        run: composer update
-
       - name: Copy environment file
         run: cp .env.travis .env
 
@@ -61,3 +58,6 @@ jobs:
 
       - name: Execute tests
         run: vendor/bin/phpunit
+
+      #- name: Build the Docker image
+      #  run: docker build . --file ./docker/php/Dockerfile --tag research-catalog:$(date +%s)
