@@ -44,9 +44,6 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --prefer-dist --no-interaction --no-progress
 
-      - name: Update Composer
-        run: composer update
-
       - name: Copy environment file
         run: cp .env.travis .env
 
