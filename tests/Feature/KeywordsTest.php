@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Keyword;
+use App\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\BrowserKitTestCase;
 
@@ -11,9 +13,9 @@ class KeywordsTest extends BrowserKitTestCase
 
     public function testItShowsAListOfKeywords()
     {
-        $this->actingAs(factory(\App\User::class)->create());
+        $this->actingAs(User::factory()->create());
 
-        factory(\App\Keyword::class, 10)->create();
+        Keyword::factory()->count(10)->create();
 
         $this->get('keywords');
 
