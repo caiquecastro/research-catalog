@@ -4,6 +4,8 @@ RUN set -ex \
   && apk --no-cache add \
     postgresql-dev
 
-COPY . .
+COPY composer.* ./
+
+RUN composer install
 
 RUN docker-php-ext-install pdo pgsql pdo_pgsql
