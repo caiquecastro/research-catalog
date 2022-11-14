@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Role;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -25,9 +26,7 @@ class ResearcherFactory extends Factory
             'phone' => $this->faker->phoneNumber,
             'mobile_phone' => $this->faker->phoneNumber,
             'status' => $this->faker->randomElement(['active']),
-            /* 'role_id' => function () {
-                return factory(App\Role::class)->create()->id;
-            }, */
+            'role_id' => Role::factory(),
             'admission_date' => $this->faker->dateTimeThisDecade,
         ];
     }
