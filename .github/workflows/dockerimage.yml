@@ -18,6 +18,10 @@ jobs:
     services:
       postgres:
         image: postgres:10
+        env:
+          POSTGRES_DB: catalog
+          POSTGRES_USER: catalog_user
+          POSTGRES_PASSWORD: catalog_pass
         ports:
           - 5432:5432
 
