@@ -1,6 +1,5 @@
 # Research Catalog
 
-[![Build Status](https://travis-ci.org/caiquecastro/research-catalog.svg?branch=master)](https://travis-ci.org/caiquecastro/research-catalog)
 ![StyleCI](https://styleci.io/repos/114034093/shield)
 
 ## About the Project
